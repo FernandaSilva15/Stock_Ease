@@ -1,0 +1,51 @@
+package Model;
+import javax.swing.*;
+import java.awt.*;
+
+public class meteForte {
+	//criar os componentes
+	private JLabel lblPica;
+	private JButton btnBuceta;
+	
+	//construtor
+	public meteForte() {
+		inicializarComponentes();
+		definirEventos();
+	}
+
+	private void inicializarComponentes() {
+		//configurações de tela
+		Toolkit tk;
+        tk = Toolkit.getDefaultToolkit();
+        Dimension d = tk.getScreenSize();
+		
+		//inicializar componentes
+		lblPica = new JLabel("Pica");
+		btnBuceta= new JButton("Buceta");
+		
+		//Fonte e cores
+		Font fontesLabel = new Font("Arial", Font.PLAIN, 22);
+		lblPica.setFont(fontesLabel);
+		
+		Color corPica = new Color(250, 55, 78);
+		lblPica.setForeground(corPica); //cor da fonte
+		btnBuceta.setBackground(corPica); //cor do fundo
+		
+		lblPica.setBackground(Color.PINK);
+		
+		//Coordenadas
+		lblPica.setBounds(0,0,200, 300);
+		btnBuceta.setBounds(20, 50, 100, 100);
+		
+		//Adiciona
+		add(lblPica);
+		add(btnBuceta);
+		
+		setVisible(true);
+	}
+	
+	private void definirEventos() {
+		
+		
+	}	
+}
