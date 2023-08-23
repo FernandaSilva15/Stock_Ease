@@ -1,0 +1,11 @@
+package Controller;
+
+import Bo.FuncionarioBO;
+
+public class FuncionarioCONTROLLER {
+	public void Cadastrar (String nomeCompleto, String celular, String email, String senha, String genero,String dataNascimento) {
+		FuncionarioBO bo = new FuncionarioBO();
+		bo.Cadastrar(nomeCompleto, celular, email, senha, genero, dataNascimento);
+	}
+
+}
