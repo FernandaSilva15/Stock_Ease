@@ -1,0 +1,102 @@
+package view;
+
+	import javax.swing.*;
+
+import Controller.FuncionarioCONTROLLER;
+
+import java.awt.*;
+	import java.awt.event.ActionEvent;
+	import java.awt.event.ActionListener;
+	
+
+	public class Cadastro {
+		JButton salvarButton;
+		
+		public Cadastro() {
+	        JFrame frame = new JFrame("Tela de Cadastro");
+	        frame.setSize(400, 300);
+	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	        JPanel panel = new JPanel();
+	        panel.setLayout(new GridLayout(7, 2));
+
+	        JLabel nomeLabel = new JLabel("Nome completo:");
+	        JTextField nomeField = new JTextField();
+
+	        JLabel celularLabel = new JLabel("Celular:");
+	        JTextField celularField = new JTextField();
+
+	        JLabel emailLabel = new JLabel("E-mail:");
+	        JTextField emailField = new JTextField();
+
+	        JLabel senhaLabel = new JLabel("Senha:");
+	        JPasswordField senhaField = new JPasswordField();
+
+	        JLabel dataNascimentoLabel = new JLabel("Data de Nascimento:");
+	        JTextField dataNascimentoField = new JTextField();
+
+	        JLabel generoLabel = new JLabel("Gênero:");
+	        String[] generoOptions = {"Masculino", "Feminino"};
+	        JComboBox<String> generoComboBox = new JComboBox<>(generoOptions);
+
+	        salvarButton = new JButton("Salvar");
+	        
+	        salvarButton.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					 String nome = nomeField.getText();
+		                String celular = celularField.getText();
+		                String email = emailField.getText();
+		                String senha = new String(senhaField.getPassword());
+		                String dataNascimento = dataNascimentoField.getText();
+		                String genero = (String) generoComboBox.getSelectedItem();
+					FuncionarioCONTROLLER cont = new FuncionarioCONTROLLER();
+					cont.Cadastrar(nome, celular, email,senha,dataNascimento, genero);
+					
+					  JOptionPane.showMessageDialog(null, "Dados salvos:\nNome: " + nome +
+		                        "\nCelular: " + celular +
+		                        "\nE-mail: " + email +
+		                        "\nData de Nascimento: " + dataNascimento +
+		                        "\nGênero: " + genero);
+				}
+			});
+	        
+
+	        panel.add(nomeLabel);
+	        panel.add(nomeField);
+	        panel.add(celularLabel);
+	        panel.add(celularField);
+	        panel.add(emailLabel);
+	        panel.add(emailField);
+	        panel.add(senhaLabel);
+	        panel.add(senhaField);
+	        panel.add(dataNascimentoLabel);
+	        panel.add(dataNascimentoField);
+	        panel.add(generoLabel);
+	        panel.add(generoComboBox);
+	        panel.add(new JLabel()); // Espaçador vazio
+	        panel.add(salvarButton);
+
+	        frame.add(panel);
+	        frame.setVisible(true);
+	    }
+		
+
+	   public static void main(String[] args) {
+	        SwingUtilities.invokeLater(new Runnable() {
+	           public void run() {
+	                new Cadastro();//MEU DEUS
+	            }
+	        });
+	    }
+
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+
+	}
+	
