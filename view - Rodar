@@ -1,0 +1,7 @@
+package view;
+
+public class Rodar {
+	public static void main(String[]args){
+		TelaLogin tela=new TelaLogin();
+	}
+}
