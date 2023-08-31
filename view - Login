@@ -1,104 +1,64 @@
 package view;
-
-import javax.swing.*;
-import javax.swing.JOptionPane;
-
-import Model.PredefinedCredentials;
-
-//import Controller.MainController.LoginListener;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
 
-public class Login extends JFrame {
-    private JTextField emailField;
-    private JPasswordField senhaField;
-    private JButton loginButton;
 
-    public Login() {
-        setTitle("Tela de Login");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);  // Desabilitando o gerenciador de layout
-
-        JLabel emailLabel = new JLabel("E-mail:");
-        emailLabel.setBounds(50, 30, 60, 20);
-        add(emailLabel);
-
-        emailField = new JTextField();
-        emailField.setBounds(120, 30, 150, 20);
-        add(emailField);
-
-        JLabel senhaLabel = new JLabel("Senha:");
-        senhaLabel.setBounds(50, 60, 60, 20);
-        add(senhaLabel);
-
-        senhaField = new JPasswordField();
-        senhaField.setBounds(120, 60, 150, 20);
-        add(senhaField);
-
-        loginButton = new JButton("Entrar");
-        loginButton.setBounds(120, 100, 80, 25);
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String email = emailField.getText();
-                char[] senhaChars = senhaField.getPassword();
-                String senha = new String(senhaChars);
-
-                if (verificarCredenciais(email, senha)) {
-                    JOptionPane.showMessageDialog(rootPane, this, "Login bem-sucedido!", getDefaultCloseOperation(), null);
-                    // Aqui você poderia abrir a próxima tela após um login bem-sucedido
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, this, "Login falhou. Verifique suas credenciais.", getDefaultCloseOperation(), null);
-                }
-            }
-
-            private boolean verificarCredenciais(String email, String senha) {
-            	
-                if (email.equals("pietra@gmail.com") && senha.equals("pietra"))
-                if (email.equals("fernanda@gmail.com") && senha.equals("fernanda"))
-                if (email.equals("lucas@gmail.com") && senha.equals("lucas"))
-                if (email.equals("julia@gmail.com") && senha.equals("julia"))
-                if (email.equals("rafaela@gmail.com") && senha.equals("rafaela")){
-                return true;
-                }
-                
-                return false;
-            }
-
-        });
-        add(loginButton);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                Login tela = new Login();
-                tela.setVisible(true);
-             
-            }
-        });
-    }
-
-	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
+public class TelaLogin extends JFrame{
+	Color rosinha =new Color(255, 240, 245);
+	Color roxinho=new Color(138, 43, 226);
+	
+	private Container contentPane;
+	private JLayeredPane lp;
+	private JLabel lblLogo;
+	private JLabel lblLogin;
+	private JLabel lblEmail;
+	private JLabel lblSenha;
+	private JTextField txtEmail;
+	private JPasswordField pfSenha;
+	private JButton btnEntrar;
+	private JButton btnCadastrar;
+	
+	public TelaLogin() {
+		inicializarComponentes();
+		definirEventos();
 	}
 
-	public String getSenha() {
-		return null;
+	private void inicializarComponentes() {
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = toolkit.getScreenSize();
+		setBounds(0, 0, screenSize.width, screenSize.height-40);
+		contentPane=getContentPane();
+		contentPane.setBackground(rosinha);
+		
+		//inicializar
+		lp= new JLayeredPane();
+		lblLogin =new JLabel("Login");
+		txtEmail= new JTextField(10);
+		//lblLogo =new JLabel(new ImageIcon(caminho));
+		
+		
+		//cores e formatações
+		lblLogin.setForeground(roxinho);
+		
+		Font fonteLogin =new Font("Arial",Font.BOLD, 60);
+		lblLogin.setFont(fonteLogin);
+		
+		
+		//coordenadas
+		lblLogin.setBounds(1000,50,400, 60);
+		
+		//adiciona
+		contentPane.add(lp);
+		
+		lp.add(lblLogin,new Integer(1));
+		
+		
+		setVisible(true);
 		
 	}
 
-	/*public void addLoginListener(LoginListener loginListener) {
-		// TODO Auto-generated method stub
+	private void definirEventos() {
 		
-	}*/
-
-	/*public void addLoginListener(Controller.MainController.LoginListener loginListener) {
-		// TODO Auto-generated method stub
 		
-	}*/
+	}
 }
