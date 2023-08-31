@@ -2,10 +2,11 @@ package Model;
 import javax.swing.*;
 import java.awt.*;
 
-public class meteForte {
+public class meteForte extends JFrame{
 	//criar os componentes
 	private JLabel lblPica;
 	private JButton btnBuceta;
+	private Container contentPane;
 	
 	//construtor
 	public meteForte() {
@@ -15,9 +16,10 @@ public class meteForte {
 
 	private void inicializarComponentes() {
 		//configurações de tela
-		Toolkit tk;
-        tk = Toolkit.getDefaultToolkit();
-        Dimension d = tk.getScreenSize();
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = toolkit.getScreenSize();
+		setBounds(0, 0, screenSize.width, screenSize.height-40);
+		contentPane=getContentPane();
 		
 		//inicializar componentes
 		lblPica = new JLabel("Pica");
