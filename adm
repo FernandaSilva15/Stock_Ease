@@ -1,0 +1,116 @@
+package view;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class adm  extends JFrame{
+	
+
+	Color rosa_claro = new Color(221, 160, 221);
+	Color roxo_escuro = new Color(153, 50, 204);
+	Color branco = new Color(255, 255, 255);
+	Color branco_roxo = new Color(238, 210, 238);	
+	
+	private Container contentPane;
+	private JLabel lblTela;
+	private JButton btnProdutos;
+	private JButton btnFornecedores;
+	private JButton btnVenda;
+	private JLayeredPane lp;
+	
+	//contrutor
+	public  adm() {
+		inicializarComponentes();
+		definirEventos();
+	}
+	
+	
+	private void inicializarComponentes() {
+		
+		lp= new JLayeredPane();
+		lblTela = new JLabel("administrador");
+		btnProdutos= new JButton("produtos");
+		btnFornecedores = new JButton ("Fornecedores");
+		btnVenda = new JButton ("Venda");
+		
+		
+		lblTela.setForeground(roxo_escuro);
+		btnProdutos.setBackground(roxo_escuro);
+		btnProdutos.setForeground(branco);
+		btnFornecedores.setBackground(roxo_escuro);
+		btnFornecedores.setForeground(branco);
+		btnVenda.setBackground(branco);
+		btnVenda.setForeground(roxo_escuro);
+		
+
+		Font fonteAri =new Font("Arial",Font.BOLD, 60);
+		Font fonteAria =new Font("Arial",Font.BOLD, 80);
+		btnVenda.setFont(fonteAria);
+		btnProdutos.setFont(fonteAri);
+		btnFornecedores.setFont(fonteAri);
+
+		
+		
+		//configurações tela
+
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = toolkit.getScreenSize();
+		setBounds(0, 0, screenSize.width, screenSize.height-40);
+		Container contentPane = getContentPane();
+		
+		
+		// inicializar componentes
+		lblTela.setBounds(810,100,400, 60);
+		btnProdutos.setBounds(350, 500, 400, 100);
+		btnFornecedores.setBounds(1100, 500, 450, 100);
+		btnVenda.setBounds(600,600,600,100);
+		
+		add(lblTela);
+		add(btnProdutos);
+		add(btnFornecedores);
+		add(btnVenda);
+		
+		contentPane.add(lp);
+		
+		lp.add(lblTela,new Integer(1));
+		lp.add(btnProdutos, new Integer(2));
+		lp.add(btnFornecedores, new Integer(3));
+		lp.add(btnVenda, new Integer(4));
+		
+		setVisible(true);
+	}
+	
+	private void definirEventos() {
+		
+		btnProdutos.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TelaProdutos  t1 = new TelaProdutos();
+
+				contentPane.removeAll();
+				contentPane.add(t1);
+				contentPane.validate();
+			}
+			
+			
+		});
+		
+		btnFornecedores.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TelaFornecedores t2 = new TelaFornecedores();
+
+				contentPane.removeAll();
+				contentPane.add(t2);
+				contentPane.validate();
+			}
+			
+			
+		});
+
+		
+	}
+
+}
