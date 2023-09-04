@@ -1,0 +1,8 @@
+package view;
+
+public class RodarTelaMenuCaixa {
+	public static void main(String[]args){
+		TelaMenuCaixa tela = new TelaMenuCaixa();
+	}
+	
+}
