@@ -65,9 +65,9 @@ private void definirEventos() {
 	btnCaixa.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			TelaFuncao tela = new TelaFuncao();
+			TelaMenuCaixa t1 = new TelaMenuCaixa();
 			contentPane.removeAll();
-			contentPane.add(tela);
+			contentPane.add(t1);
 			contentPane.validate();
 		}
 		
@@ -77,9 +77,9 @@ private void definirEventos() {
 	btnAdministrador.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			TelaFuncao tela = new TelaFuncao();
+			TelaMenuAdministrador t2 = new TelaMenuAdministrador();
 			contentPane.removeAll();
-			contentPane.add(tela);
+			contentPane.add(t2);
 			contentPane.validate();
 		}
 		
