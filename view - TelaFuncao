@@ -1,0 +1,90 @@
+package view;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class TelaFuncao extends JFrame {
+	Color rosa_claro = new Color(221, 160, 221);
+	Color roxo_escuro = new Color(153, 50, 204);
+	Color branco = new Color(255, 255, 255);
+	Color branco_roxo = new Color(238, 210, 238);
+	private Container contentPane;
+	private JLayeredPane lp;
+	private JLabel lblPergunta;
+	private JButton btnCaixa;
+	private JButton btnAdministrador;
+
+	public TelaFuncao()
+	{
+
+			inicializarComponentes();
+			definirEventos();
+
+		}
+
+private void inicializarComponentes() {
+	Toolkit toolkit = Toolkit.getDefaultToolkit();
+	Dimension screenSize = toolkit.getScreenSize();
+	setBounds(0, 0, screenSize.width, screenSize.height-40);
+	contentPane=getContentPane();
+	contentPane.setBackground(rosa_claro);
+	
+	lp= new JLayeredPane();
+	lblPergunta =new JLabel("Você é?");
+	btnCaixa = new JButton("Caixa");
+	btnAdministrador = new JButton("Administrador");
+	
+	lblPergunta.setForeground(roxo_escuro);
+	btnCaixa.setBackground(roxo_escuro);
+	btnCaixa.setForeground(branco);
+	btnAdministrador.setBackground(branco_roxo);
+	btnAdministrador.setForeground(roxo_escuro);
+	
+	Font fonteAri =new Font("Arial",Font.BOLD, 60);
+	Font fonteAria =new Font("Arial",Font.BOLD, 80);
+	lblPergunta.setFont(fonteAria);
+	btnCaixa.setFont(fonteAri);
+	btnAdministrador.setFont(fonteAri);
+	
+	lblPergunta.setBounds(810,100,400, 60);
+	btnCaixa.setBounds(400, 500, 400, 100);
+	btnAdministrador.setBounds(1100, 500, 450, 100);
+	//adiciona
+	contentPane.add(lp);
+	
+	lp.add(lblPergunta,new Integer(1));
+	lp.add(btnCaixa, new Integer(2));
+	lp.add(btnAdministrador, new Integer(3));
+	
+	setVisible(true);
+	
+}
+
+private void definirEventos() {
+	btnCaixa.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			TelaFuncao tela = new TelaFuncao();
+			contentPane.removeAll();
+			contentPane.add(tela);
+			contentPane.validate();
+		}
+		
+		
+	});
+	
+	btnAdministrador.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			TelaFuncao tela = new TelaFuncao();
+			contentPane.removeAll();
+			contentPane.add(tela);
+			contentPane.validate();
+		}
+		
+		
+	});
+	
+}
+}
