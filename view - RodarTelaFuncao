@@ -1,0 +1,7 @@
+package view;
+
+public class RodarTelaFuncao {
+	public static void main(String[]args){
+		TelaFuncao tela = new TelaFuncao();
+	}
+}
