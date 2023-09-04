@@ -1,6 +1,6 @@
 package view;
 
-public class RodarL {
+public class RodarLogin {
 	public static void main(String[]args){
 		TelaLogin tela=new TelaLogin();
 	}
