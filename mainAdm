@@ -1,0 +1,10 @@
+package adm;
+
+public class mainAdm {
+	public static void main(String[] args) {
+		
+		adm rodar = new adm();
+		
+	}
+
+}
