@@ -1,0 +1,120 @@
+package br.com.projeto.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectionFactory {
+    
+    public Connection connection = null;
+    
+	private final String DRIVER = "com.mysql.jdbc.Driver";
+	private final String DBNAME = "bdvendas";
+	private final String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
+	private final String LOGIN = "usuariocurso";
+	private final String SENHA = "123";
+        
+        /**
+	 * * metodo que faz conexao com o banco de dados retorna true se houve *
+	 * sucesso, ou false em caso negativo
+     * @return 
+	 */
+
+	public Connection getConnection() {
+		
+	    Connection connection = null;
+
+	    try {
+	        Class.forName(DRIVER);
+	        connection = DriverManager.getConnection(URL, LOGIN, SENHA);
+	        System.out.println("Conectou");
+	    } catch (ClassNotFoundException erro) {
+	        System.out.println("Driver nao encontrado " + erro.toString());
+	    } catch (SQLException erro) {
+	        System.out.println("Falha ao conectar " + erro.toString());
+	    }
+
+	    return connection;
+	}
+
+	public void close() {
+		try {
+			connection.close();
+			System.out.println("Desconectou");
+		} catch (SQLException erro) {
+		}
+	}
+}
+
+
+
+
+
+/*package br.com.projeto.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectionFactory {
+    
+    
+
+    public Connection getConnection() {
+
+        try {
+            
+            
+            return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bdvendas\"","usuariocurso","123"); //quem faz a conexao com o banco de dados
+            //acima estao as strings de conexao
+        } catch (Exception erro) {
+            
+            throw new RuntimeException(erro);
+            
+        }
+        }
+    
+
+}
+
+
+/*package POO;
+
+import java.sql.*;
+
+public class BD {
+	public Connection connection = null;
+	private final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private final String DBNAME = "banco";
+	private final String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
+	private final String LOGIN = "root";
+	private final String SENHA = "root";
+
+	/**
+	 * * metodo que faz conexao com o banco de dados retorna true se houve *
+	 * sucesso, ou false em caso negativo
+	 
+	public boolean getConnection() {
+		try {
+			Class.forName(DRIVER);
+			connection = DriverManager.getConnection(URL, LOGIN, SENHA);
+			System.out.println("Conectou");
+			return true;
+		} catch (ClassNotFoundException erro) {
+			System.out.println("Driver nao encontrado " + erro.toString());
+			return false;
+		} catch (SQLException erro) {
+			System.out.println("Falha ao conectar " + erro.toString());
+			return false;
+		}
+	}
+
+	public void close() {
+		try {
+			connection.close();
+			System.out.println("Desconectou");
+		} catch (SQLException erro) {
+		}
+	}
+
+}*/
