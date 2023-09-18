@@ -1,0 +1,38 @@
+package br.com.projeto.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author Pietra
+ */
+public class TestaConexao {
+    
+    public static void main(String[] args) { 
+        Connection connection = null;
+        try {
+            // Configurar a URL de conexão com o banco de dados
+            String url = "jdbc:mysql://127.0.0.1/bdvendas";
+            String usuario = "usuariocurso";
+            String senha = "123";
+
+            // Obtém uma conexão usando DriverManager
+            connection = DriverManager.getConnection(url, usuario, senha);
+
+            // Faça o que precisa com a conexão aqui
+            JOptionPane.showMessageDialog(null,"Conexão bem-sucedida (MEU DEUS DEU CERTO FINALMENTE)!");
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null,"Não Deu certo tente novamente AAAA!!!" +erro.toString());
+        } finally {
+            // Certifique-se de fechar a conexão quando terminar de usá-la
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException erro) {
+                }
+            }
+        }
+    }
+}
