@@ -1,1 +1,2 @@
-heryheyu457y7uj6u
+"Stock Ease" é um sistema de gerenciamento de estoque de lojas ou empresas. Ele procura garantir que a empresa ou loja tenha os melhores resultados possíveis, aplicando táticas e técnicas que visam a otimizar os recursos da organização, como por exemplo, ter certo  controle da entrada e saída dos produtos dentro do ambiente comercial, mantendo um controle de estoque ideal para que o estabelecimento seja bem sucedido e tenha bons resultados comerciais, além de proporcionar uma forma mais  harmoniosa e eficiente para a corporação conseguir se organizar, e manter o controle diante de suas tarefas diárias impondo um tipo de rotina.
+
