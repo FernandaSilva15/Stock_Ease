@@ -1,8 +1,8 @@
-CREATE DATABASE STOCK;
+CREATE DATABASE BDSTOCK;
 CREATE USER 'usuarioestoque'@'%' IDENTIFIED BY '123';
 GRANT ALL ON *.* TO 'usuarioestoque'@'%' WITH GRANT OPTION;
 flush privileges;
-USE STOCK;
+USE BDSTOCK;
 
 CREATE TABLE tb_clientes (
   id int auto_increment primary key,
