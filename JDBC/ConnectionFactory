@@ -9,7 +9,7 @@ public class ConnectionFactory {
     public Connection connection = null;
     
 	private final String DRIVER = "com.mysql.jdbc.Driver";
-	private final String DBNAME = "bdvendas";
+	private final String DBNAME = "bdstock";
 	private final String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
 	private final String LOGIN = "usuarioStock";
 	private final String SENHA = "1234";
