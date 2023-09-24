@@ -1,92 +1,181 @@
 CREATE DATABASE BDSTOCK;
-CREATE USER 'usuarioestoque'@'%' IDENTIFIED BY '123';
-GRANT ALL ON *.* TO 'usuarioestoque'@'%' WITH GRANT OPTION;
-flush privileges;
+
+CREATE USER 'usuarioStock'@'%' IDENTIFIED BY '1234';
+
+GRANT ALL ON *.* TO 'usuarioStock'@'%' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
 USE BDSTOCK;
 
 CREATE TABLE tb_clientes (
-  id int auto_increment primary key,
-  nome varchar(100),
-  rg varchar (30),
-  cpf varchar (20),
-  email varchar(200),
-  telefone varchar(30),
-  celular varchar(30),
-  cep varchar(100),
-  endereco varchar (255),
-  numero int,
-  complemento varchar (200),
-  bairro varchar (100),
-  cidade varchar (100),
-  estado varchar (2)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  rg VARCHAR(30),
+  cpf VARCHAR(20) NOT NULL,
+  email VARCHAR(200) NOT NULL,
+  telefone VARCHAR(30),
+  celular VARCHAR(30),
+  cep VARCHAR(100) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  numero INT NOT NULL,
+  complemento VARCHAR(200),
+  bairro VARCHAR(100),
+  cidade VARCHAR(100) NOT NULL,
+  estado VARCHAR(2) NOT NULL
 );
 
 CREATE TABLE tb_fornecedores (
-  id int auto_increment primary key,
-  nome varchar(100),
-  cnpj varchar (100),
-  email varchar(200),
-  telefone varchar(30),
-  celular varchar(30),
-  cep varchar(100),
-  endereco varchar (255),
-  numero int,
-  complemento varchar (200),
-  bairro varchar (100),
-  cidade varchar (100),
-  estado varchar (2)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  cnpj VARCHAR(100) NOT NULL,
+  email VARCHAR(200) NOT NULL,
+  telefone VARCHAR(30),
+  celular VARCHAR(30),
+  cep VARCHAR(100) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  numero INT NOT NULL,
+  complemento VARCHAR(200),
+  bairro VARCHAR(100),
+  cidade VARCHAR(100) NOT NULL,
+  estado VARCHAR(2) NOT NULL
 );
 
 CREATE TABLE tb_funcionarios (
-  id int auto_increment primary key,
-  nome varchar(100),
-  rg varchar (30),
-  cpf varchar (20),
-  email varchar(200),
-  senha varchar(10),
-  cargo varchar(100),
-  nivel_acesso varchar(50),
-  telefone varchar(30),
-  celular varchar(30),
-  cep varchar(100),
-  endereco varchar (255),
-  numero int,
-  complemento varchar (200),
-  bairro varchar (100),
-  cidade varchar (100),
-  estado varchar (2)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  rg VARCHAR(30),
+  cpf VARCHAR(20) NOT NULL,
+  email VARCHAR(200) NOT NULL,
+  senha VARCHAR(10) NOT NULL,
+  cargo VARCHAR(100) NOT NULL,
+  nivel_acesso VARCHAR(50) NOT NULL,
+  telefone VARCHAR(30),
+  celular VARCHAR(30),
+  cep VARCHAR(100) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  numero INT NOT NULL,
+  complemento VARCHAR(200),
+  bairro VARCHAR(100),
+  cidade VARCHAR(100) NOT NULL,
+  estado VARCHAR(2) NOT NULL
 );
 
 CREATE TABLE tb_produtos (
-  id int auto_increment primary key,
-  descricao varchar(100),
-  preco decimal (10,2),
-  qtd_estoque int,
-  for_id int,
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  descricao VARCHAR(100) NOT NULL,
+  preco DECIMAL(10, 2) NOT NULL,
+  qtd_estoque INT NOT NULL,
+  for_id INT NOT NULL,
 
   FOREIGN KEY (for_id) REFERENCES tb_fornecedores(id)
 );
 
 CREATE TABLE tb_vendas (
-  id int auto_increment primary key,
-  cliente_id int,
-  data_venda datetime,
-  total_venda decimal (10,2),
-  observacoes text,
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cliente_id INT NOT NULL,
+  data_venda DATETIME NOT NULL,
+  total_venda DECIMAL(10, 2) NOT NULL,
+  observacoes TEXT,
 
   FOREIGN KEY (cliente_id) REFERENCES tb_clientes(id)
 );
 
 CREATE TABLE tb_itensvendas (
-  id int auto_increment primary key,
-  venda_id int,
-  produto_id int,
-  qtd int,
-  subtotal decimal (10,2),
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  venda_id INT NOT NULL,
+  produto_id INT NOT NULL,
+  qtd INT NOT NULL,
+  subtotal DECIMAL(10, 2) NOT NULL,
 
   FOREIGN KEY (venda_id) REFERENCES tb_vendas(id),
   FOREIGN KEY (produto_id) REFERENCES tb_produtos(id)
 );
 
+#clientes
+INSERT INTO bdstock.tb_clientes (nome, rg, cpf, email, telefone, celular, cep, endereco, numero, complemento, bairro, cidade, estado)
+VALUES ('João Silva', '12345678', '123.456.789-00', 'joao@email.com', '(11) 1234-5678', '(11) 98765-4321', '12345-678', 'Rua Principal', 123, 'Apto 101', 'Centro', 'São Paulo', 'SP'),
+('Pietra Cruz', '12389754', '123.456.888-00', 'cruz@email.com', '(11) 1234-8594', '(11) 95794-4321', '15345-688', 'Rua Avenida', 589, 'Apto 125', 'zona sul', 'rio de janeiro', 'RJ');
+;
+
+UPDATE bdstock.tb_clientes
+SET telefone = '(11) 9599-9999'
+WHERE id = 1; -- Substitua 1 pelo ID do cliente que deseja atualizar
+
+DELETE FROM bdstock.tb_clientes
+WHERE id = 2; 
+
+SELECT * FROM bdstock.tb_clientes;
+
+#fornecedores
+INSERT INTO bdstock.tb_fornecedores (nome, cnpj, email, telefone, celular, cep, endereco, numero, complemento, bairro, cidade, estado)
+VALUES ('Fornecedor A', '12.345.678/0001-00', 'fornecedor@email.com', '(11) 1234-5678', '(11) 9876-5432', '12345-678', 'Rua Fornecedora', 123, 'Sala 101', 'Centro', 'São Paulo', 'SP'),
+('Fornecedor B', '58.345.678/0001-00', 'fornecedor2@email.com', '(36) 1234-5678', '(82) 9876-5432', '18955-678', 'Rua Fornecedora 21', 456, 'Sala 105', 'Centro', 'São Paulo', 'SP');
+;
 
 
+UPDATE bdstock.tb_fornecedores
+SET telefone = '(11) 9999-9999'
+WHERE id = 1; 
+
+DELETE FROM bdstock.tb_fornecedores
+WHERE id = 2; 
+
+
+SELECT * FROM bdstock.tb_fornecedores;
+
+#funcionarios
+INSERT INTO bdstock.tb_funcionarios (nome, rg, cpf, email, senha, cargo, nivel_acesso, telefone, celular, cep, endereco, numero, complemento, bairro, cidade, estado)
+VALUES ('Funcionário A', '1234567', '123.456.789-00', 'funcionario1@email.com', 'senha123', 'Vendedor', 'Usuario', '(11) 1111-1111', '(11) 2222-2222', '54321-987', 'Rua do Funcionário 1', 456, 'Apto 202', 'Bairro do Funcionário 1', 'Cidade Funcional', 'MG'),
+       ('Funcionário B', '8888888', '825.456.799-00', 'funcionario2@email.com', 'senha456', 'Caixa', 'Usuario', '(11) 1111-4444', '(11) 2222-2222', '54321-859', 'Rua do Funcionário 2', 476, 'Apto 205', 'Bairro do Funcionário 2', 'Rio Preto', 'AM');
+
+
+UPDATE bdstock.tb_funcionarios
+SET cargo = 'ADMINISTRADOR'
+WHERE id = 1; 
+
+DELETE FROM bdstock.tb_funcionarios
+WHERE id = 2; 
+
+
+SELECT * FROM bdstock.tb_funcionarios;
+
+#produtos
+INSERT INTO bdstock.tb_produtos (descricao, preco, qtd_estoque, for_id)
+VALUES ('Produto A', 49.99, 100, 1),
+('Produto B', 88.99, 250, 2);
+
+UPDATE bdstock.tb_produtos
+SET preco = 59.99
+WHERE id = 1; 
+DELETE FROM bdstock.tb_produtos
+WHERE id = 2; 
+SELECT * FROM bdstock.tb_produtos;
+
+#vendas
+INSERT INTO bdstock.tb_vendas (cliente_id, data_venda, total_venda, observacoes)
+VALUES (1, '2023-09-24 14:30:00', 150.00, 'Venda realizada em dinheiro.'),
+(1, '2022-09-24 14:30:00', 200.00, 'Venda realizada em Cartao.');
+
+UPDATE bdstock.tb_vendas
+SET total_venda = 175.00
+WHERE id = 1; 
+
+DELETE FROM bdstock.tb_vendas
+WHERE id = 2; 
+
+SELECT * FROM bdstock.tb_vendas;
+
+#itens vendas
+INSERT INTO bdstock.tb_itensvendas (venda_id, produto_id, qtd, subtotal)
+VALUES (1, 3, 4, 100.00),
+(1, 4, 2, 115.00); 
+
+UPDATE bdstock.tb_itensvendas
+SET qtd = 3
+WHERE id = 2; 
+
+DELETE FROM bdstock.tb_itensvendas
+WHERE id = 1; 
+
+SELECT * FROM bdstock.tb_itensvendas;
