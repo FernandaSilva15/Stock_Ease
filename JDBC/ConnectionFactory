@@ -11,8 +11,8 @@ public class ConnectionFactory {
 	private final String DRIVER = "com.mysql.jdbc.Driver";
 	private final String DBNAME = "bdstock";
 	private final String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
-	private final String LOGIN = "usuarioStock";
-	private final String SENHA = "1234";
+	private final String LOGIN = "usuarioStockease";
+	private final String SENHA = "12345";
         
         /**
 	 * * metodo que faz conexao com o banco de dados retorna true se houve *
@@ -45,35 +45,3 @@ public class ConnectionFactory {
 		}
 	}
 }
-
-
-
-
-
-/*package br.com.projeto.jdbc;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-public class ConnectionFactory {
-    
-    
-
-    public Connection getConnection() {
-
-        try {
-            
-            
-            return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bdvendas\"","usuariocurso","123"); //quem faz a conexao com o banco de dados
-            //acima estao as strings de conexao
-        } catch (Exception erro) {
-            
-            throw new RuntimeException(erro);
-            
-        }
-        }
-    
-
-}
-
