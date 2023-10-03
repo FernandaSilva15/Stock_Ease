@@ -574,7 +574,7 @@ public class FrmProdutos extends javax.swing.JFrame {
     }                                            
 
     private void cbfornecedoresMouseClicked(java.awt.event.MouseEvent evt) {                                            
-       //carregando combobox fornecedores
+        //carregando combobox fornecedores
 
         FornecedoresDAO dao = new FornecedoresDAO();
 
@@ -582,7 +582,7 @@ public class FrmProdutos extends javax.swing.JFrame {
 
         cbfornecedores.removeAll();
         for (Fornecedores f : listadefornecedores) {
-            cbfornecedores.addItem(f); 
+            cbfornecedores.addItem(f);
         }
     }                                           
 
