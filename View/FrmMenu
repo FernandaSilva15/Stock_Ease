@@ -1,19 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.com.projeto.view;
-
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 
 /**
  *
- * @author Pietra
+ * @author karol
  */
-public class FrmMenu extends javax.swing.JFrame {
-
-    
+public class FrmMenuPrincipal extends javax.swing.JFrame {
     public String usuariologado;
-            
-    public FrmMenu() {
+
+    /**
+     * Creates new form FrmMenu_
+     */
+    public FrmMenuPrincipal() {
         initComponents();
     }
 
@@ -26,186 +28,173 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jMenuItem10 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lblusuario = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        btnclientesmenu = new javax.swing.JButton();
-        btnfuncionariosmenu = new javax.swing.JButton();
-        btnvendasmenu = new javax.swing.JButton();
-        btnprodutosmenu = new javax.swing.JButton();
-        btnfornecedoresmenu1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        txtusuario = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        btnconfig = new javax.swing.JMenu();
-        btntrocadeusu = new javax.swing.JMenuItem();
-        btnSobreosistema = new javax.swing.JMenuItem();
-        btnManualUsuario = new javax.swing.JMenuItem();
-        btnsair = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
 
-        jMenuItem10.setText("jMenuItem10");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema Stock Ease (Controle de Estoque)");
-        setBackground(new java.awt.Color(241, 227, 255));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu Stock Ease");
+        setBackground(new java.awt.Color(204, 204, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(189, 189, 237));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel1.setText("Conectado com o Funcionário:");
-
-        lblusuario.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        lblusuario.setForeground(new java.awt.Color(153, 0, 204));
-        lblusuario.setText("Francisca Souza");
-
-        jPanel2.setBackground(new java.awt.Color(242, 236, 243));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/NOVALOGOneww_1.png"))); // NOI18N
-
-        btnclientesmenu.setBackground(new java.awt.Color(204, 153, 255));
-        btnclientesmenu.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnclientesmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/clientes (2).png"))); // NOI18N
-        btnclientesmenu.setText("Clientes");
-        btnclientesmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(242, 236, 243), new java.awt.Color(242, 236, 243)));
-        btnclientesmenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton2.setText("Vendas");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnclientesmenuActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        btnfuncionariosmenu.setBackground(new java.awt.Color(204, 153, 255));
-        btnfuncionariosmenu.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnfuncionariosmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/funcionariosss.png"))); // NOI18N
-        btnfuncionariosmenu.setText("Funcionários");
-        btnfuncionariosmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnfuncionariosmenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton3.setText("Produtos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnfuncionariosmenuActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
-        btnvendasmenu.setBackground(new java.awt.Color(204, 153, 255));
-        btnvendasmenu.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnvendasmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/vendas (2).png"))); // NOI18N
-        btnvendasmenu.setText("Vendas");
-        btnvendasmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        btnprodutosmenu.setBackground(new java.awt.Color(204, 153, 255));
-        btnprodutosmenu.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnprodutosmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/produtos (2).png"))); // NOI18N
-        btnprodutosmenu.setText("Produtos");
-        btnprodutosmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnprodutosmenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton4.setText("Fornecedores");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnprodutosmenuActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
 
-        btnfornecedoresmenu1.setBackground(new java.awt.Color(204, 153, 255));
-        btnfornecedoresmenu1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        btnfornecedoresmenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/fornecedores (2).png"))); // NOI18N
-        btnfornecedoresmenu1.setText("Fornecedores");
-        btnfornecedoresmenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnfornecedoresmenu1.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton5.setText("Configurações");
+
+        jButton6.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton6.setText("Clientes");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnfornecedoresmenu1ActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jButton1.setText("Funcionários");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/STOCK EASE (2) (1).png"))); // NOI18N
+
+        txtusuario.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        txtusuario.setForeground(new java.awt.Color(160, 6, 198));
+        txtusuario.setText("Pietra Cruz");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jLabel3.setText("Conectado com:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnfornecedoresmenu1, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                    .addComponent(btnvendasmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnclientesmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnfuncionariosmenu, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                    .addComponent(btnprodutosmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel3)
+                .addGap(27, 27, 27)
+                .addComponent(txtusuario)
+                .addContainerGap(1673, Short.MAX_VALUE))
         );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnclientesmenu, btnfornecedoresmenu1, btnfuncionariosmenu, btnprodutosmenu, btnvendasmenu});
-
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnclientesmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnfuncionariosmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnfornecedoresmenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnprodutosmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(72, 72, 72)
-                        .addComponent(btnvendasmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtusuario))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnclientesmenu, btnfornecedoresmenu1, btnfuncionariosmenu, btnprodutosmenu, btnvendasmenu});
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(lblusuario)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton1)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(245, 245, 245)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3, jButton4, jButton5, jButton6});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblusuario))
-                .addGap(6, 6, 6))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton1)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton4)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton3)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton2)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(213, 171, 255));
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3, jButton4, jButton5, jButton6});
 
-        jMenu1.setText("  Clientes ");
-        jMenu1.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
+        jMenu1.setText("  Clientes  ");
+        jMenu1.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        jMenuItem1.setText("Controle de Clientes");
+        jMenuItem1.setText("Cadastrar Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -213,133 +202,77 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("  Funcionários  ");
-        jMenu2.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
-
-        jMenuItem2.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        jMenuItem2.setText("Controle de Funcionarios");
+        jMenuItem2.setText("Consultar Clientes");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu1.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("  Fornecedores  ");
-        jMenu3.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
+        jMenu2.setText(" Funcionários  ");
+        jMenu2.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem3.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        jMenuItem3.setText("Controle de Fornecedores");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem3);
+        jMenuItem3.setText("Cadastrar Funcionários");
+        jMenu2.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu3);
-
-        jMenu6.setText("  Produtos  ");
-        jMenu6.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
-
-        jMenuItem4.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        jMenuItem4.setText("Controle de Estoque");
+        jMenuItem4.setText("Consultar Funcionários");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem4);
+        jMenu2.add(jMenuItem4);
 
-        jMenuItem5.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/calendario (2).png"))); // NOI18N
-        jMenuItem5.setText("Consulta de Produtos");
-        jMenu6.add(jMenuItem5);
+        jMenuBar1.add(jMenu2);
 
-        jMenuBar1.add(jMenu6);
+        jMenu3.setText(" Fornecedores  ");
+        jMenu3.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenu4.setText("  Vendas  ");
-        jMenu4.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
+        jMenuItem5.setText("Cadastrar Fornecedores");
+        jMenu3.add(jMenuItem5);
 
-        jMenuItem7.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/new.png"))); // NOI18N
+        jMenuItem6.setText("Consultar Fornecedores");
+        jMenu3.add(jMenuItem6);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu7.setText("  Produtos  ");
+        jMenu7.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
+        jMenuBar1.add(jMenu7);
+
+        jMenu4.setText(" Vendas ");
+        jMenu4.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
+
         jMenuItem7.setText("Abrir PDV");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
         jMenu4.add(jMenuItem7);
 
-        jMenuItem8.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/calendario (2).png"))); // NOI18N
-        jMenuItem8.setText("Posição do dia");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
+        jMenuItem8.setText("Histórico de Vendas");
         jMenu4.add(jMenuItem8);
 
-        jMenuItem9.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pagamentos (2).png"))); // NOI18N
-        jMenuItem9.setText("Histórico de Vendas");
+        jMenuItem9.setText("jMenuItem9");
         jMenu4.add(jMenuItem9);
 
         jMenuBar1.add(jMenu4);
 
-        btnconfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/config.png"))); // NOI18N
-        btnconfig.setText("Configurações");
-        btnconfig.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
+        jMenu5.setText("  Configurações  ");
+        jMenu5.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        btntrocadeusu.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 16)); // NOI18N
-        btntrocadeusu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/edit.png"))); // NOI18N
-        btntrocadeusu.setText("Troca de Usuários");
-        btntrocadeusu.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setText("Trocar de Usuário");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntrocadeusuActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        btnconfig.add(btntrocadeusu);
+        jMenu5.add(jMenuItem10);
 
-        btnSobreosistema.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 0, 16)); // NOI18N
-        btnSobreosistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        btnSobreosistema.setText("Sobre o Sistema");
-        btnSobreosistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSobreosistemaActionPerformed(evt);
-            }
-        });
-        btnconfig.add(btnSobreosistema);
+        jMenuBar1.add(jMenu5);
 
-        btnManualUsuario.setFont(new java.awt.Font("MingLiU-ExtB", 0, 16)); // NOI18N
-        btnManualUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/pesqui.png"))); // NOI18N
-        btnManualUsuario.setText("Manual do usuário");
-        btnManualUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManualUsuarioActionPerformed(evt);
-            }
-        });
-        btnconfig.add(btnManualUsuario);
-
-        jMenuBar1.add(btnconfig);
-
-        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/sair (2).png"))); // NOI18N
-        btnsair.setText("Sair");
-        btnsair.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 20)); // NOI18N
-        btnsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsairActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(btnsair);
+        jMenu6.setText(" Sair");
+        jMenu6.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
+        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -351,76 +284,56 @@ public class FrmMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>                        
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        new FrmCliente().setVisible(true);
-    }                                          
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
     }                                          
-
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
-        // maximizar tela
-        
-        this.setExtendedState(this.MAXIMIZED_BOTH);
-        lblusuario.setText(usuariologado);
-        this.setVisible(true);
-    }                                    
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        new FrmFuncionarioo().setVisible(true);
-    }                                          
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        new FrmFornecedores().setVisible(true);
+        // TODO add your handling code here:
     }                                          
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-       new FrmProdutos().setVisible(true);
+        // TODO add your handling code here:
     }                                          
 
-    private void btnSobreosistemaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        new FrmSobreSistema().setVisible(true);
-    }                                                
-
-    private void btntrocadeusuActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }                                             
+    }                                           
 
-    private void btnManualUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        // maximizar o frame
+         this.setExtendedState(this.MAXIMIZED_BOTH);
+         txtusuario.setText(usuariologado);
+         this.setVisible(true);
+    }                                    
 
-    private void btnclientesmenuActionPerformed(java.awt.event.ActionEvent evt) {                                                
-       new FrmCliente().setVisible(true);
-       
-    }                                               
-
-    private void btnfuncionariosmenuActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-       new FrmFuncionarioo().setVisible(true);
-    }                                                   
-
-    private void btnfornecedoresmenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        new FrmFornecedores().setVisible(true);
-    }                                                    
-
-    private void btnprodutosmenuActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         new FrmProdutos().setVisible(true);
-    }                                               
+    }                                        
 
-    private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        
-    }                                       
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       new FrmFuncionarios().setVisible(true);
+    }                                        
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+      new FrmFornecedores().setVisible(true);
+    }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        new FrmClientes().setVisible(true);
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       new FrmMenuVendas().setVisible(true);
+    }                                        
 
     /**
      * @param args the command line arguments
@@ -439,42 +352,41 @@ public class FrmMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMenu().setVisible(true);
+                new FrmMenuPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JMenuItem btnManualUsuario;
-    private javax.swing.JMenuItem btnSobreosistema;
-    private javax.swing.JButton btnclientesmenu;
-    private javax.swing.JMenu btnconfig;
-    private javax.swing.JButton btnfornecedoresmenu1;
-    private javax.swing.JButton btnfuncionariosmenu;
-    private javax.swing.JButton btnprodutosmenu;
-    private javax.swing.JMenu btnsair;
-    private javax.swing.JMenuItem btntrocadeusu;
-    private javax.swing.JButton btnvendasmenu;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -482,12 +394,12 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblusuario;
+    private javax.swing.JLabel txtusuario;
     // End of variables declaration                   
 }
-
