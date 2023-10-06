@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.com.projeto.model;
+
+/**
+ *
+ * @author karol
+ */
+public class ItensVendas {
+    private int id;
+    private vendas venda;
+    private Produtos produto;
+    private int qtd;
+    private Double subtotal;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public vendas getVenda() {
+        return venda;
+    }
+
+    public void setVenda(vendas venda) {
+        this.venda = venda;
+    }
+
+    public Produtos getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produtos produto) {
+        this.produto = produto;
+    }
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+ 
+}
