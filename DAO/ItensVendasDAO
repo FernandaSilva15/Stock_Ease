@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.com.projeto.dao;
 
 import br.com.projeto.jdbc.ConnectionFactory;
-import br.com.projeto.model.Clientes;
 import br.com.projeto.model.ItensVendas;
 import br.com.projeto.model.Produtos;
-import br.com.projeto.model.vendas;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -32,11 +25,12 @@ public class itemVendaDAO {
 
     }
 
-    public void cadastraItem(ItensVendas obj) {
-
-        try {
+    
+    
+        public void cadastraItem(ItensVendas obj){
+         try {
             // primeiro passo criar o comando mysql
-            String sql = "insert into tb_itensvendas(venda_id,produto_id,qtd,subtotal)"
+            String sql = "insert into tb_ItensVendas(venda_id,produto_id,qtd,subtotal)"
                     + "values(?,?,?,?)";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
@@ -52,11 +46,14 @@ public class itemVendaDAO {
             stmt.close();
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "erro: " + erro);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!: " + erro);
         }
 
-    }
 
+
+}
+    
+    
     //metodo das vendas listar
     public List<ItensVendas> listaItensPorVenda(int venda_id) {
 
@@ -95,5 +92,6 @@ public class itemVendaDAO {
         }
 
     }
+
 
 }
