@@ -5,10 +5,6 @@
  */
 package br.com.projeto.view;
 
-/**
- *
- * @author karol
- */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
     public String usuariologado;
 
