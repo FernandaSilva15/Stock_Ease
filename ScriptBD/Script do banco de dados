@@ -1,12 +1,11 @@
-CREATE DATABASE BDSTOCK;
+CREATE DATABASE StockEase;
+CREATE USER 'StockEase10'@'%' IDENTIFIED BY '00000';
 
-CREATE USER 'usuarioStockease'@'%' IDENTIFIED BY '12345';
-
-GRANT ALL ON *.* TO 'usuarioStockease'@'%' WITH GRANT OPTION;
+GRANT ALL ON *.* TO 'StockEase10'@'%' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 
-USE BDSTOCK;
+USE StockEase;
 
 CREATE TABLE tb_clientes (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -64,6 +63,7 @@ CREATE TABLE tb_funcionarios (
 CREATE TABLE tb_produtos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   descricao VARCHAR(100) NOT NULL,
+  categoria varchar(100),
   preco DECIMAL(10, 2) NOT NULL,
   qtd_estoque INT NOT NULL,
   for_id INT NOT NULL,
@@ -73,17 +73,20 @@ CREATE TABLE tb_produtos (
 
 CREATE TABLE tb_vendas (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  cliente_id INT NOT NULL,
+  cliente_id INT,
+  funcionario_id INT NOT NULL,
   data_venda DATETIME NOT NULL,
   total_venda DECIMAL(10, 2) NOT NULL,
   observacoes TEXT,
 
-  FOREIGN KEY (cliente_id) REFERENCES tb_clientes(id)
+  FOREIGN KEY (cliente_id) REFERENCES tb_clientes(id),
+  FOREIGN KEY (funcionario_id) REFERENCES tb_funcionarios(id)
 );
+
 
 CREATE TABLE tb_itensvendas (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  venda_id INT NOT NULL,
+  venda_id INT,
   produto_id INT NOT NULL,
   qtd INT NOT NULL,
   subtotal DECIMAL(10, 2) NOT NULL,
@@ -91,3 +94,4 @@ CREATE TABLE tb_itensvendas (
   FOREIGN KEY (venda_id) REFERENCES tb_vendas(id),
   FOREIGN KEY (produto_id) REFERENCES tb_produtos(id)
 );
+
