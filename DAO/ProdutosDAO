@@ -1,7 +1,6 @@
 package br.com.projeto.dao;
 
 import br.com.projeto.jdbc.ConnectionFactory;
-import br.com.projeto.model.Clientes;
 import br.com.projeto.model.Fornecedores;
 import br.com.projeto.model.Produtos;
 import java.sql.Connection;
@@ -24,8 +23,8 @@ public class ProdutosDAO {
     public void cadastrarProdutos(Produtos obj) {
         try {
             // primeiro passo criar o comando mysql
-            String sql = "insert into tb_produtos(descricao,preco,qtd_estoque,for_id)"
-                    + "values(?,?,?,?)";
+            String sql = "insert into tb_produtos(descricao,preco,qtd_estoque,for_id,categoria)"
+                    + "values(?,?,?,?,?)";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -34,6 +33,7 @@ public class ProdutosDAO {
             stmt.setDouble(2, obj.getPreco());
             stmt.setInt(3, obj.getQtd_estoque());
             stmt.setInt(4, obj.getFornecedor().getId());
+            stmt.setString(5, obj.getCategoria());
 
             // terceiro passo - executar o comando sql
             stmt.execute();
@@ -51,7 +51,7 @@ public class ProdutosDAO {
     public void alterarProdutos(Produtos obj) {
         try {
             // primeiro passo criar o comando mysql
-            String sql = "UPDATE tb_produtos SET descricao=?, preco=?, qtd_estoque=?, for_id=? WHERE id=?";
+            String sql = "UPDATE tb_produtos SET descricao=?, preco=?, qtd_estoque=?, for_id=?, categoria=? WHERE id=?";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -60,8 +60,9 @@ public class ProdutosDAO {
             stmt.setDouble(2, obj.getPreco());
             stmt.setInt(3, obj.getQtd_estoque());
             stmt.setInt(4, obj.getFornecedor().getId());
+            stmt.setString(5, obj.getCategoria());
 
-            stmt.setInt(5, obj.getId());//chave primaria do produto
+            stmt.setInt(6, obj.getId());//chave primaria do produto
 
             // terceiro passo - executar o comando sql
             stmt.execute();
@@ -105,7 +106,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id)";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -118,11 +119,12 @@ public class ProdutosDAO {
                 Fornecedores f = new Fornecedores();
 
                 obj.setId(rs.getInt("p.id"));
-                obj.setDescricao(rs.getString("p.descricao"));
+                obj.setCategoria(rs.getString("p.categoria"));
                 obj.setPreco(rs.getDouble("p.preco"));
                 obj.setQtd_estoque(rs.getInt("p.qtd_estoque"));
 
                 f.setNome(rs.getString("f.nome"));
+                obj.setDescricao(rs.getString("p.descricao"));
                 obj.setFornecedor(f);
 
                 lista.add(obj);
@@ -144,7 +146,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id) where p.descricao like ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -164,6 +166,8 @@ public class ProdutosDAO {
                 obj.setQtd_estoque(rs.getInt("p.qtd_estoque"));
 
                 f.setNome(rs.getString("f.nome"));
+                obj.setCategoria(rs.getString("p.categoria"));
+                obj.setFornecedor(f);
 
                 lista.add(obj);
 
@@ -184,7 +188,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id) where p.descricao = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -202,6 +206,7 @@ public class ProdutosDAO {
                 obj.setQtd_estoque(rs.getInt("p.qtd_estoque"));
 
                 f.setNome(rs.getString("f.nome"));
+                obj.setCategoria(rs.getString("p.categoria"));
 
                 obj.setFornecedor(f);
 
@@ -215,5 +220,76 @@ public class ProdutosDAO {
         }
     }
 
-}
+    public Produtos BuscaPorCodigo(int id) {
 
+        try {
+
+            // 1- criar a lista
+            List<Produtos> lista = new ArrayList<>();
+            // 2- Criar o comando mysql, organizar e executar
+            String sql = "select * from tb_produtos where id = ?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            ResultSet rs = stmt.executeQuery();
+            Produtos obj = new Produtos();
+            Fornecedores f = new Fornecedores();// sempre criar esse objeto e ele reccebe essa execução (sql)
+
+            if (rs.next()) {
+
+                obj.setId(rs.getInt("id"));
+                obj.setDescricao(rs.getString("descricao"));
+                obj.setPreco(rs.getDouble("preco"));
+                obj.setQtd_estoque(rs.getInt("qtd_estoque"));
+                obj.setCategoria(rs.getString("categoria"));
+
+            }
+            return obj;
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Produto não encontrado ou dados incorretos");
+            return null;
+        }
+    }
+
+    //metodo de acesso ao estoque atualiza
+    public void baixarEstoque(int id, int qtd_nova) {
+        try {
+            String sql = "update tb_produtos set qtd_estoque=? where id=?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, qtd_nova);
+            stmt.setInt(2, id);
+            stmt.execute();
+            stmt.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "erro" + e);
+        }
+
+    }
+
+    //metodo de retorno ao estoque atual do produto (faz uma conta de subtracao)
+    public int retornaEstoqueAtual(int id) {
+
+        try {
+            int qtd_estoque = 0;
+            String sql = "SELECT qtd_estoque from tb_produtos where id =?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                qtd_estoque = (rs.getInt("qtd_estoque"));
+            }
+            return qtd_estoque;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+}
