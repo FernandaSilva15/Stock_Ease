@@ -2,8 +2,7 @@ package br.com.projeto.dao;
 
 import br.com.projeto.jdbc.ConnectionFactory;
 import br.com.projeto.model.Clientes;
-import br.com.projeto.model.Fornecedores;
-import br.com.projeto.model.Produtos;
+import br.com.projeto.model.Funcionarios;
 import br.com.projeto.model.vendas;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,23 +31,24 @@ public class VendasDAO {
 
         try {
             // primeiro passo criar o comando mysql
-            String sql = "insert into tb_vendas(cliente_id,data_venda,total_venda,observacoes)"
-                    + "values(?,?,?,?)";
+            String sql = "insert into tb_vendas(cliente_id, funcionario_id, data_venda, total_venda, observacoes)"
+                    + "values(?,?,?,?,?)";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
             PreparedStatement stmt = con.prepareStatement(sql);
 
             stmt.setInt(1, obj.getCliente().getId());
-            stmt.setString(2, obj.getData_venda());
-            stmt.setDouble(3, obj.getTotal_venda());
-            stmt.setString(4, obj.getObs());
+            stmt.setInt(2, obj.getFuncionario().getId());
+            stmt.setString(3, obj.getData_venda());
+            stmt.setDouble(4, obj.getTotal_venda());
+            stmt.setString(5, obj.getObs());
 
             // terceiro passo - executar o comando sql
             stmt.execute();
             stmt.close();
 
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "erro: " + erro);
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "COMO TU VAI RESOLVER ISSO?: " + erro);
         }
 
     }
@@ -83,23 +83,25 @@ public class VendasDAO {
             // 1- criar a lista
             List<vendas> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select v.id, date_format(data_venda,'%d/%m/%y') as data_formatada, c.nome, v.total_venda, v.observacoes from tb_vendas as v "
-                    + " inner join tb_clientes as c on (v.cliente_id = c.id) where v.data_venda BETWEEN ? AND ?";
+            String sql = "select v.id, date_format(data_venda,'%d/%m/%y') as data_formatada, c.nome , f.nome, v.total_venda, v.observacoes from tb_vendas as v "
+                    + " inner join tb_clientes as c on (v.cliente_id = c.id) INNER JOIN tb_funcionarios AS f ON (v.funcionario_id = f.id) where v.data_venda BETWEEN ? AND ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, data_inicio.toString());
             stmt.setString(2, data_fim.toString());
 
             ResultSet rs = stmt.executeQuery();// sempre criar esse objeto e ele reccebe essa execução (sql)
-
+            
             while (rs.next()) {
 
                 vendas obj = new vendas();
                 Clientes c = new Clientes();
+                Funcionarios f = new Funcionarios();
 
                 obj.setId(rs.getInt("v.id"));
                 obj.setData_venda(rs.getString("data_formatada"));
                 c.setNome(rs.getString("c.nome"));
+                f.setNome(rs.getString("f.nome"));
                 obj.setTotal_venda(rs.getDouble("v.total_venda"));
                 obj.setObs(rs.getString("v.observacoes"));
 
@@ -110,8 +112,8 @@ public class VendasDAO {
             }
             return lista;
         } catch (SQLException erro) {
-
-            JOptionPane.showMessageDialog(null, "Erro" + erro);
+            erro.printStackTrace();
+            JOptionPane.showMessageDialog(null, "erro" + erro);
             return null;
         }
 
@@ -140,4 +142,3 @@ public class VendasDAO {
     }
 
 }
-
