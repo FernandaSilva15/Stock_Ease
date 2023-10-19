@@ -8,14 +8,11 @@ package br.com.projeto.view;
 import br.com.projeto.dao.FuncionariosDAO;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author karol
- */
+
 public class FrmLogin extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrmLoginn
+     * Creates new form FrmLogin
      */
     public FrmLogin() {
         initComponents();
