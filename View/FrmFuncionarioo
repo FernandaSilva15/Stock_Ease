@@ -8,10 +8,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import br.com.projeto.model.WebServiceCep;
-/**
- *
- * @author karol
- */
 public class FrmFuncionariosStock extends javax.swing.JFrame {
     //metodo listar na tabela
 
