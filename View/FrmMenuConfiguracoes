@@ -1,9 +1,5 @@
 package br.com.projeto.view;
 
-/**
- *
- * @author karol
- */
 public class FrmMenuConfiguracoes extends javax.swing.JFrame {
 
     /**
