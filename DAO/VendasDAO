@@ -106,6 +106,7 @@ public class VendasDAO {
                 obj.setObs(rs.getString("v.observacoes"));
 
                 obj.setCliente(c);
+                obj.setFuncionario(f);
 
                 lista.add(obj);
 
