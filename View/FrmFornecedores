@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author karol
  */
-public class FrmFornecedoresEstoque extends javax.swing.JFrame {
+public class FrmFornecedores extends javax.swing.JFrame {
     //metodo listar na tabela
 
     public void listar() {
@@ -44,7 +44,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
 
     }
 
-    public FrmFornecedoresEstoque() {
+    public FrmFornecedores() {
         initComponents();
     }
 
@@ -89,6 +89,8 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         btnSALVAR = new javax.swing.JButton();
         btnEDITAR = new javax.swing.JButton();
         btnEXCLUIR = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         lblnome = new javax.swing.JLabel();
         txtPesquisa = new javax.swing.JTextField();
@@ -96,7 +98,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaFornecedores = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Fornecedores");
         setBackground(new java.awt.Color(232, 232, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -105,7 +107,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(203, 190, 251));
+        jPanel1.setBackground(new java.awt.Color(189, 189, 237));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 48)); // NOI18N
@@ -118,15 +120,15 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(267, 267, 267))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 992, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(407, 407, 407))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -272,10 +274,12 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         cbUf.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
         cbUf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RR", "SC", "SP", "SE", "TO" }));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenss/STOCK EASE (1).png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/STOCK EASE (1).png"))); // NOI18N
 
         btnNOVO.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnNOVO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novo.png"))); // NOI18N
         btnNOVO.setText("NOVO");
+        btnNOVO.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnNOVO.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNOVO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,7 +288,9 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         });
 
         btnSALVAR.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSALVAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/salvar (3)_1.png"))); // NOI18N
         btnSALVAR.setText("SALVAR");
+        btnSALVAR.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnSALVAR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSALVAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,7 +299,9 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         });
 
         btnEDITAR.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEDITAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/editar (2).png"))); // NOI18N
         btnEDITAR.setText("EDITAR");
+        btnEDITAR.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnEDITAR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEDITAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,7 +310,9 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         });
 
         btnEXCLUIR.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEXCLUIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/excluir.png"))); // NOI18N
         btnEXCLUIR.setText("EXCLUIR");
+        btnEXCLUIR.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnEXCLUIR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEXCLUIR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,14 +320,34 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar (1).png"))); // NOI18N
+        jButton4.setText("VOLTAR");
+        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sair (1) (2).png"))); // NOI18N
+        jButton6.setText("SAIR");
+        jButton6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painel_dadossLayout = new javax.swing.GroupLayout(painel_dadoss);
         painel_dadoss.setLayout(painel_dadossLayout);
         painel_dadossLayout.setHorizontalGroup(
             painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_dadossLayout.createSequentialGroup()
-                .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_dadossLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(painel_dadossLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
                         .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painel_dadossLayout.createSequentialGroup()
                                 .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,21 +358,18 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
                                     .addComponent(lblbairro))
                                 .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(painel_dadossLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(344, 344, 344)
+                                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(painel_dadossLayout.createSequentialGroup()
                                         .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(painel_dadossLayout.createSequentialGroup()
-                                                .addGap(337, 337, 337)
-                                                .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(painel_dadossLayout.createSequentialGroup()
-                                                .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(painel_dadossLayout.createSequentialGroup()
-                                                        .addGap(183, 183, 183)
-                                                        .addComponent(jLabel14))
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(cbUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addGap(190, 190, 190)
+                                                .addComponent(jLabel14))
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(painel_dadossLayout.createSequentialGroup()
                                         .addGap(24, 24, 24)
                                         .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,7 +378,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painel_dadossLayout.createSequentialGroup()
                                                     .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                         .addComponent(txtCep, javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(txtBairro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                                                        .addComponent(txtBairro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                     .addComponent(jLabel13))
                                                 .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,27 +405,31 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
                                         .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnBuscar)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_dadossLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE))
+                    .addGroup(painel_dadossLayout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnNOVO, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSALVAR)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEDITAR)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEXCLUIR)
-                        .addGap(80, 80, 80)))
-                .addComponent(jLabel17))
+                        .addGap(137, 137, 137)))
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        painel_dadossLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEDITAR, btnEXCLUIR, btnNOVO, btnSALVAR});
+        painel_dadossLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEDITAR, btnEXCLUIR, btnNOVO, btnSALVAR, jButton4, jButton6});
 
         painel_dadossLayout.setVerticalGroup(
             painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_dadossLayout.createSequentialGroup()
+            .addGroup(painel_dadossLayout.createSequentialGroup()
                 .addGap(0, 78, Short.MAX_VALUE)
                 .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(painel_dadossLayout.createSequentialGroup()
                         .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblid)
@@ -452,16 +483,19 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addComponent(cbUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel8)))
-                        .addGap(33, 33, 33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnNOVO, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSALVAR)
-                            .addComponent(btnEDITAR)
-                            .addComponent(btnEXCLUIR)))
-                    .addComponent(jLabel17)))
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painel_dadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnNOVO, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSALVAR)
+                                .addComponent(btnEDITAR)
+                                .addComponent(btnEXCLUIR)))
+                        .addGap(41, 41, 41))))
         );
 
-        painel_dadossLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEDITAR, btnEXCLUIR, btnNOVO, btnSALVAR});
+        painel_dadossLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEDITAR, btnEXCLUIR, btnNOVO, btnSALVAR, jButton4, jButton6});
 
         javax.swing.GroupLayout jlayeredPanel2Layout = new javax.swing.GroupLayout(jlayeredPanel2);
         jlayeredPanel2.setLayout(jlayeredPanel2Layout);
@@ -524,14 +558,14 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addGap(203, 203, 203)
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1409, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addComponent(lblnome)
                         .addGap(18, 18, 18)
                         .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnPesquisarFornecedores)))
-                .addContainerGap(437, Short.MAX_VALUE))
+                .addGap(0, 203, Short.MAX_VALUE))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -739,7 +773,8 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
     }                                         
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
-        //carrega lista
+        //carrega lista e maximiza tela
+        this.setExtendedState(this.MAXIMIZED_BOTH);
         listar();
     }                                    
 
@@ -798,6 +833,16 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         }
     }                                 
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+        new FrmMenuFornecedores().setVisible(true);
+    }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
+    }                                        
+
     /**
      * @param args the command line arguments
      */
@@ -815,14 +860,18 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmFornecedoresEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmFornecedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmFornecedoresEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmFornecedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmFornecedoresEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmFornecedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmFornecedoresEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmFornecedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -831,7 +880,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmFornecedoresEstoque().setVisible(true);
+                new FrmFornecedores().setVisible(true);
             }
         });
     }
@@ -846,6 +895,8 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
     private javax.swing.JButton btnNOVO;
     private javax.swing.JButton btnSALVAR;
     private javax.swing.JComboBox cbUf;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -858,7 +909,7 @@ public class FrmFornecedoresEstoque extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLayeredPane jlayeredPanel2;
     private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblEmail;
