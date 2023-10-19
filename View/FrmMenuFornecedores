@@ -1,9 +1,4 @@
 package br.com.projeto.view;
-
-/**
- *
- * @author karol
- */
 public class FrmMenuFornecedores extends javax.swing.JFrame {
 
     /**
