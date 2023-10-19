@@ -8,6 +8,15 @@ public class Produtos {
     private String descricao;
     private double preco;
     private int qtd_estoque;
+    private String categoria;
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     private Fornecedores fornecedor; //chaves estrangeiras representadas por objetos
     
@@ -54,4 +63,3 @@ public class Produtos {
     }
 
 }
-
