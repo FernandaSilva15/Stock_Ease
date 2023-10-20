@@ -8,6 +8,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *
+ * @author karol
+ */
 public class FrmClientes extends javax.swing.JFrame {
     //metodo listar na tabela
 
