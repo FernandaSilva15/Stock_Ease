@@ -43,8 +43,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         historico_vendas = new javax.swing.JMenuItem();
         detalhe_vendas = new javax.swing.JMenuItem();
-        Controle_estoque = new javax.swing.JMenuItem();
-        vendas_dia = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -291,19 +290,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu4.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
         jMenuItem7.setText("Abrir PDV");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
         jMenu4.add(jMenuItem7);
 
         historico_vendas.setText("Histórico de Vendas");
-        historico_vendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historico_vendasActionPerformed(evt);
-            }
-        });
         jMenu4.add(historico_vendas);
 
         detalhe_vendas.setText("Detalhe de Vendas");
@@ -314,16 +303,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(detalhe_vendas);
 
-        Controle_estoque.setText("Controle de Estoque");
-        Controle_estoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Controle_estoqueActionPerformed(evt);
-            }
-        });
-        jMenu4.add(Controle_estoque);
-
-        vendas_dia.setText("Vendas do Dia");
-        jMenu4.add(vendas_dia);
+        jMenuItem11.setText("Controle de Estoque");
+        jMenu4.add(jMenuItem11);
 
         jMenuBar1.add(jMenu4);
 
@@ -437,8 +418,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }                                        
 
     private void detalhe_vendasActionPerformed(java.awt.event.ActionEvent evt) {                                               
-       this.dispose();
-       new DetalheVenda().setVisible(true);
+        // TODO add your handling code here:
     }                                              
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {                                    
@@ -482,23 +462,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         new FrmMenuConfiguracoes().setVisible(true);
     }                                                
 
-    private void Controle_estoqueActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        ControleEstoque tela = new ControleEstoque();
-        tela.setVisible(true);
-    }                                                
-
-    private void historico_vendasActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-      this.dispose();
-       new FrmHistoricoVendas().setVisible(true);
-    }                                                
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-       this.dispose();
-       this.dispose();
-       new FrmVendas().setVisible(true);
-       
-    }                                          
-
     /**
      * @param args the command line arguments
      */
@@ -536,7 +499,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    public javax.swing.JMenuItem Controle_estoque;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnFornecedor;
     private javax.swing.JButton btnFuncionario;
@@ -557,6 +519,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
@@ -570,7 +533,5 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txtusuario;
-    public javax.swing.JMenuItem vendas_dia;
     // End of variables declaration                   
 }
-
