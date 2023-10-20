@@ -1,9 +1,5 @@
 package br.com.projeto.view;
 
-/**
- *
- * @author karol
- */
 public class FrmMenuProdutos extends javax.swing.JFrame {
 
     /**
@@ -27,6 +23,7 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnconsultapro = new javax.swing.JButton();
         btncadastropro = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -35,7 +32,7 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(203, 190, 251));
+        jPanel1.setBackground(new java.awt.Color(189, 189, 237));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -48,14 +45,14 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(713, 713, 713))
+                .addGap(708, 708, 708))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(243, 241, 253));
@@ -80,25 +77,41 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar (1).png"))); // NOI18N
+        jButton2.setText("VOLTAR");
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(497, Short.MAX_VALUE)
+                .addContainerGap(486, Short.MAX_VALUE)
                 .addComponent(btncadastropro, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(126, 126, 126)
                 .addComponent(btnconsultapro, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(426, 426, 426))
+                .addGap(459, 459, 459))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addGap(152, 152, 152)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnconsultapro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncadastropro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,8 +144,14 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
     }                                    
 
     private void btncadastroproActionPerformed(java.awt.event.ActionEvent evt) {                                               
+       this.dispose();
         new FrmProdutos().setVisible(true);
     }                                              
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
+    }                                        
 
     /**
      * @param args the command line arguments
@@ -179,6 +198,7 @@ public class FrmMenuProdutos extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton btncadastropro;
     private javax.swing.JButton btnconsultapro;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
