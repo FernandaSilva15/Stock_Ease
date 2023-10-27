@@ -3,13 +3,11 @@ package br.com.projeto.model;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Pietra
- *
- */
 public class Utilitarios {
+
 
 //1- metodo limparCampos
     public void LimpaTela(JPanel container){
@@ -24,5 +22,13 @@ for (Component component : components) {
             }
         }
     }
+
+    // 2- Método para limpar uma tabela
+    public void limparTabela(JTable tabela) {
+        DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+        model.setRowCount(0);
+    }
 }
+
+
 
