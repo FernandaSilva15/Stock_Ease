@@ -2,6 +2,7 @@ package br.com.projeto.view;
 
 import br.com.projeto.dao.ProdutosDAO;
 import br.com.projeto.model.Produtos;
+import br.com.projeto.model.Utilitarios;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -54,6 +55,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         TXTPESQUISAPRODUTOS = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProdutosLista = new javax.swing.JTable();
@@ -66,7 +68,7 @@ public class ControleEstoque extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(189, 189, 237));
+        jPanel1.setBackground(new java.awt.Color(188, 152, 239));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,12 +157,22 @@ public class ControleEstoque extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sair (1) (2).png"))); // NOI18N
+        jButton6.setText(" SAIR");
+        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNome14)
                     .addComponent(lblNome13)
@@ -178,12 +190,23 @@ public class ControleEstoque extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton3, jButton6});
+
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome12)
                     .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,16 +220,16 @@ public class ControleEstoque extends javax.swing.JFrame {
                     .addComponent(txtqtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNome14)
                     .addComponent(jButton2))
-                .addContainerGap(64, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(46, Short.MAX_VALUE))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton3, jButton6});
 
         jPanel3.setBackground(new java.awt.Color(243, 241, 253));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Produtos Listados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 18))); // NOI18N
 
+        tabelaProdutosLista.setBackground(new java.awt.Color(235, 235, 255));
+        tabelaProdutosLista.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         tabelaProdutosLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -214,13 +237,32 @@ public class ControleEstoque extends javax.swing.JFrame {
             new String [] {
                 "Código:", "Descrição:", "Preço:", "Qtd. Estoque:", "Fornecedor:", "Categoria:"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaProdutosLista.setGridColor(new java.awt.Color(0, 0, 0));
+        tabelaProdutosLista.getTableHeader().setResizingAllowed(false);
+        tabelaProdutosLista.getTableHeader().setReorderingAllowed(false);
         tabelaProdutosLista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaProdutosListaMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tabelaProdutosLista);
+        if (tabelaProdutosLista.getColumnModel().getColumnCount() > 0) {
+            tabelaProdutosLista.getColumnModel().getColumn(0).setResizable(false);
+            tabelaProdutosLista.getColumnModel().getColumn(1).setResizable(false);
+            tabelaProdutosLista.getColumnModel().getColumn(2).setResizable(false);
+            tabelaProdutosLista.getColumnModel().getColumn(3).setResizable(false);
+            tabelaProdutosLista.getColumnModel().getColumn(4).setResizable(false);
+            tabelaProdutosLista.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -322,10 +364,17 @@ public class ControleEstoque extends javax.swing.JFrame {
             dao.AddEstoque(idproduto, qtd_nova);
 
             JOptionPane.showMessageDialog(null, "Produto Atualizado");
+             new Utilitarios().LimpaTela(jPanel2);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Informe a nova quantidade ou selecione um produto" + e);
+            JOptionPane.showMessageDialog(null, "Informe a nova quantidade ou selecione um produto");
+             new Utilitarios().LimpaTela(jPanel2);
         }
+    }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
     }                                        
 
     /**
@@ -374,6 +423,7 @@ public class ControleEstoque extends javax.swing.JFrame {
     private javax.swing.JButton TXTPESQUISAPRODUTOS;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
