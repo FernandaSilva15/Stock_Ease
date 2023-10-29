@@ -60,6 +60,7 @@ CREATE TABLE tb_funcionarios (
   estado VARCHAR(2) NOT NULL
 );
 
+
 CREATE TABLE tb_produtos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   descricao VARCHAR(100) NOT NULL,
@@ -67,7 +68,9 @@ CREATE TABLE tb_produtos (
   preco DECIMAL(10, 2) NOT NULL,
   qtd_estoque INT NOT NULL,
   for_id INT NOT NULL,
-
+  tamanho varchar(100),
+  cor varchar(100),
+  genero varchar(100),
   FOREIGN KEY (for_id) REFERENCES tb_fornecedores(id)
 );
 
