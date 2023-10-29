@@ -23,8 +23,8 @@ public class ProdutosDAO {
     public void cadastrarProdutos(Produtos obj) {
         try {
             // primeiro passo criar o comando mysql
-            String sql = "insert into tb_produtos(descricao,preco,qtd_estoque,for_id,categoria)"
-                    + "values(?,?,?,?,?)";
+            String sql = "insert into tb_produtos(descricao,preco,qtd_estoque,for_id,categoria,tamanho,cor,genero)"
+                    + "values(?,?,?,?,?,?,?,?)";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -34,6 +34,9 @@ public class ProdutosDAO {
             stmt.setInt(3, obj.getQtd_estoque());
             stmt.setInt(4, obj.getFornecedor().getId());
             stmt.setString(5, obj.getCategoria());
+            stmt.setString(6, obj.getTamanho());
+            stmt.setString(7, obj.getCor());
+            stmt.setString(8, obj.getGenero());
 
             // terceiro passo - executar o comando sql
             stmt.execute();
@@ -51,7 +54,7 @@ public class ProdutosDAO {
     public void alterarProdutos(Produtos obj) {
         try {
             // primeiro passo criar o comando mysql
-            String sql = "UPDATE tb_produtos SET descricao=?, preco=?, qtd_estoque=?, for_id=?, categoria=? WHERE id=?";
+            String sql = "UPDATE tb_produtos SET descricao=?, preco=?, qtd_estoque=?, for_id=?, categoria=?, tamanho=?, cor=?, genero=? WHERE id=?";
 
             // segundo passo - connectar o banco de dados e organizar o comando mysql
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -61,8 +64,10 @@ public class ProdutosDAO {
             stmt.setInt(3, obj.getQtd_estoque());
             stmt.setInt(4, obj.getFornecedor().getId());
             stmt.setString(5, obj.getCategoria());
-
-            stmt.setInt(6, obj.getId());//chave primaria do produto
+            stmt.setString(6, obj.getTamanho());
+            stmt.setString(7, obj.getCor());
+            stmt.setString(8, obj.getGenero());
+            stmt.setInt(9, obj.getId());//chave primaria do produto
 
             // terceiro passo - executar o comando sql
             stmt.execute();
@@ -106,7 +111,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria, p.tamanho, p.cor, p.genero from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id)";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -122,6 +127,9 @@ public class ProdutosDAO {
                 obj.setCategoria(rs.getString("p.categoria"));
                 obj.setPreco(rs.getDouble("p.preco"));
                 obj.setQtd_estoque(rs.getInt("p.qtd_estoque"));
+                obj.setTamanho(rs.getString("p.tamanho"));
+                obj.setCor(rs.getString("p.cor"));
+                obj.setGenero(rs.getString("p.genero"));
 
                 f.setNome(rs.getString("f.nome"));
                 obj.setDescricao(rs.getString("p.descricao"));
@@ -146,7 +154,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria, p.tamanho, p.cor, p.genero from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id) where p.descricao like ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -167,6 +175,9 @@ public class ProdutosDAO {
 
                 f.setNome(rs.getString("f.nome"));
                 obj.setCategoria(rs.getString("p.categoria"));
+                obj.setTamanho(rs.getString("p.tamanho"));
+                obj.setCor(rs.getString("p.cor"));
+                obj.setGenero(rs.getString("p.genero"));
                 obj.setFornecedor(f);
 
                 lista.add(obj);
@@ -188,7 +199,7 @@ public class ProdutosDAO {
             // 1- criar a lista
             List<Produtos> lista = new ArrayList<>();
             // 2- Criar o comando mysql, organizar e executar
-            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria from tb_produtos as p "
+            String sql = "select p.id, p.descricao, p.preco, p.qtd_estoque, f.nome, p.categoria, p.tamanho, p.cor, p.genero from tb_produtos as p "
                     + "inner join tb_fornecedores as f on (p.for_id = f.id) where p.descricao = ?";
 
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -207,6 +218,9 @@ public class ProdutosDAO {
 
                 f.setNome(rs.getString("f.nome"));
                 obj.setCategoria(rs.getString("p.categoria"));
+                obj.setTamanho(rs.getString("p.tamanho"));
+                obj.setCor(rs.getString("p.cor"));
+                obj.setGenero(rs.getString("p.genero"));
 
                 obj.setFornecedor(f);
 
@@ -286,6 +300,7 @@ public class ProdutosDAO {
         }
 
     }
+
     //metodo de retorno ao estoque atual do produto (faz uma conta de subtracao)
     public int retornaEstoqueAtual(int id) {
 
