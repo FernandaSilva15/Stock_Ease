@@ -1,0 +1,30 @@
+package br.com.projeto.view;
+
+import br.com.projeto.view.FrmLogin;
+import br.com.projeto.view.SplashScreen;
+
+public class ExecutaSplashScreen {
+
+    public static void main(String[] args) {
+        int duracaoSplash = 5000; // Duração em milissegundos (5 segundos)
+
+        // Crie uma instância da tela de splash
+        SplashScreen splash = new SplashScreen(duracaoSplash);
+
+        // Execute tarefas longas ou inicialização do aplicativo aqui
+        // Substitua o código abaixo pela sua lógica
+        try {
+            // Simulando uma tarefa longa
+            Thread.sleep(3000); // 3 segundos
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Após a conclusão das tarefas longas, você pode fechar a tela de splash
+        splash.dispose();
+        new FrmLogin().setVisible(true);
+
+        // Continue com a lógica principal do aplicativo
+        // Aqui você pode criar e exibir sua janela principal, por exemplo.
+    }
+}
