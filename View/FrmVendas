@@ -14,7 +14,7 @@ import br.com.projeto.model.Utilitarios;
 import javax.swing.JOptionPane;
 
 public class FrmVendas extends javax.swing.JFrame {
-    
+
     Clientes obj = new Clientes();
     Funcionarios obj1 = new Funcionarios();
     double total, preco, subtotal;
@@ -32,6 +32,7 @@ public class FrmVendas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         dadoscliente = new javax.swing.JPanel();
         lblNome12 = new javax.swing.JLabel();
         lblNome13 = new javax.swing.JLabel();
@@ -82,27 +83,34 @@ public class FrmVendas extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(188, 152, 239));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ponto de vendas");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo Stock Ease.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(647, 647, 647)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(344, 344, 344)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(57, 57, 57))
         );
 
         dadoscliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -371,6 +379,8 @@ public class FrmVendas extends javax.swing.JFrame {
             }
         });
         TabelaItens.setColumnSelectionAllowed(true);
+        TabelaItens.setSelectionBackground(new java.awt.Color(204, 204, 255));
+        TabelaItens.setSelectionForeground(new java.awt.Color(0, 0, 0));
         TabelaItens.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TabelaItens);
         TabelaItens.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -464,7 +474,7 @@ public class FrmVendas extends javax.swing.JFrame {
                         .addGap(341, 341, 341))))
         );
 
-        dadostotalLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btncancelar, btnpagamento});
+        dadostotalLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btncancelar, btncancelar1, btnpagamento});
 
         dadostotalLayout.setVerticalGroup(
             dadostotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,7 +492,7 @@ public class FrmVendas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        dadostotalLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btncancelar, btnpagamento});
+        dadostotalLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btncancelar, btncancelar1, btnpagamento});
 
         javax.swing.GroupLayout dadoscarrinhoLayout = new javax.swing.GroupLayout(dadoscarrinho);
         dadoscarrinho.setLayout(dadoscarrinhoLayout);
@@ -620,7 +630,7 @@ public class FrmVendas extends javax.swing.JFrame {
                         .addComponent(dadoscliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(dadosproduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(dadosfuncinario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(dadoscarrinho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -656,13 +666,22 @@ public class FrmVendas extends javax.swing.JFrame {
     }                                    
 
     private void btnpagamentoActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        FrmPagamento telap = new FrmPagamento();
-        telap.txttotal.setText(String.valueOf(total));
-        telap.cliente = obj;
-        telap.funcionario = obj1;
-        telap.carrinho = carrinho;
-        telap.setVisible(true);
         this.dispose();
+        FrmPagamento telap;
+
+        Clientes clientePadrao = new Clientes();
+        clientePadrao.setId(7);
+
+        if (obj != null) {
+            telap = new FrmPagamento(obj, obj1, carrinho, total);
+        } else {
+            telap = new FrmPagamento(clientePadrao, obj1, carrinho, total);
+        }
+
+        telap.valortotaldacompra.setText(String.valueOf(total));
+        telap.setVisible(true);
+
+
     }                                            
 
     private void txttotalActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -825,7 +844,7 @@ public class FrmVendas extends javax.swing.JFrame {
 
 
     }                                        
- private void atualizarValorTotalCompra(double total) {
+    private void atualizarValorTotalCompra(double total) {
 
         txttotal.setText(String.format("%.2f", total)); // Formata o valor para duas casas decimais
     }
@@ -835,8 +854,8 @@ public class FrmVendas extends javax.swing.JFrame {
         double total = 0.0;
 
         for (int row = 0; row < model.getRowCount(); row++) {
-          
-            double subtotal = (double) model.getValueAt(row,4);
+
+            double subtotal = (double) model.getValueAt(row, 4);
             total += subtotal;
         }
 
@@ -852,14 +871,13 @@ public class FrmVendas extends javax.swing.JFrame {
             int selectedRow = TabelaItens.getSelectedRow();
 
             if (selectedRow != -1) {
-              
-                double subtotal= (double) model.getValueAt(selectedRow, 4);
+
+                double subtotal = (double) model.getValueAt(selectedRow, 4);
 
                 // Remove a linha selecionada do modelo da tabela
                 model.removeRow(selectedRow);
 
-               
-                double total = obterValorTotalCompra(); 
+                double total = obterValorTotalCompra();
 
                 // Atualize o valor total da compra na interface do usuário (onde quer que seja exibido)
                 atualizarValorTotalCompra(total);
@@ -939,6 +957,7 @@ public class FrmVendas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNome12;
