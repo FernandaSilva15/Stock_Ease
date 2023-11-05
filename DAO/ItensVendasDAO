@@ -46,7 +46,7 @@ public class itemVendaDAO {
             stmt.close();
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!: " + erro);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         }
 
 
