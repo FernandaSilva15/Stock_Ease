@@ -1,28 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projeto.view;
 
+import br.com.projeto.dao.FuncionariosDAO;
 import br.com.projeto.dao.VendasDAO;
 import br.com.projeto.dao.itemVendaDAO;
+import br.com.projeto.model.Funcionarios;
 import br.com.projeto.model.ItensVendas;
 import br.com.projeto.model.vendas;
+import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class FrmHistoricoVendas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmMenuVendas
-     */
+    Funcionarios obj1 = new Funcionarios();
+
+    public void listar() {
+        VendasDAO dao = new VendasDAO();
+        List<vendas> lista = dao.listarTodasAsVendas();
+
+        DefaultTableModel dados = (DefaultTableModel) tabelaHistorico.getModel();
+        dados.setNumRows(0);
+        for (vendas v : lista) {
+            dados.addRow(new Object[]{
+                v.getId(),
+                v.getData_venda(),
+                v.getCliente().getNome(),
+                v.getFuncionario().getNome(),
+                v.getTotal_venda(),
+                v.getObs()
+            });
+        }
+
+    }
+
     public FrmHistoricoVendas() {
         initComponents();
+
     }
 
     /**
@@ -36,16 +52,29 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         txtdatainicio = new javax.swing.JFormattedTextField();
         lblNome12 = new javax.swing.JLabel();
         txtdatafim = new javax.swing.JFormattedTextField();
         lblNome13 = new javax.swing.JLabel();
         btnpesquisar = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaHistorico = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        btnpesquisar1 = new javax.swing.JButton();
+        txtdata = new javax.swing.JFormattedTextField();
+        lblNome14 = new javax.swing.JLabel();
+        txttotalvenda = new javax.swing.JTextField();
+        lblNome15 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtnomeFuncionario = new javax.swing.JTextField();
+        txtCpfuncionario = new javax.swing.JFormattedTextField();
+        lblNome16 = new javax.swing.JLabel();
+        btnbuscafuncionario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Histórico de Vendas");
@@ -55,27 +84,33 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(189, 189, 237));
+        jPanel1.setBackground(new java.awt.Color(188, 152, 239));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Histórico");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo Stock Ease.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(706, 706, 706))
+                .addGap(714, 714, 714))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(243, 241, 253));
@@ -131,6 +166,26 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sair (1) (2).png"))); // NOI18N
+        jButton6.setText(" SAIR");
+        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar (1).png"))); // NOI18N
+        jButton4.setText("VOLTAR");
+        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -148,7 +203,11 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
                         .addComponent(txtdatainicio, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,12 +222,18 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
                     .addComponent(lblNome13)
                     .addComponent(btnpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(39, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(243, 241, 253));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabela de Dados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 18))); // NOI18N
 
-        tabelaHistorico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        tabelaHistorico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(237, 237, 255), 1, true));
         tabelaHistorico.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         tabelaHistorico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,46 +242,178 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
             new String [] {
                 "Código:", "Data da Venda:", "Cliente:", "Funcionário:", "Total da Venda:", "Observações:"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaHistorico.getTableHeader().setReorderingAllowed(false);
         tabelaHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaHistoricoMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tabelaHistorico);
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar (1).png"))); // NOI18N
-        jButton4.setText("VOLTAR");
-        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        if (tabelaHistorico.getColumnModel().getColumnCount() > 0) {
+            tabelaHistorico.getColumnModel().getColumn(0).setResizable(false);
+            tabelaHistorico.getColumnModel().getColumn(1).setResizable(false);
+            tabelaHistorico.getColumnModel().getColumn(2).setResizable(false);
+            tabelaHistorico.getColumnModel().getColumn(3).setResizable(false);
+            tabelaHistorico.getColumnModel().getColumn(4).setResizable(false);
+            tabelaHistorico.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(187, 187, 187)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(223, 223, 223))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(243, 241, 253));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Total por Venda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 18))); // NOI18N
+
+        btnpesquisar1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
+        btnpesquisar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
+        btnpesquisar1.setText("Pesquisar");
+        btnpesquisar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnpesquisar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpesquisar1ActionPerformed(evt);
+            }
+        });
+
+        try {
+            txtdata.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtdata.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
+        txtdata.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdataActionPerformed(evt);
+            }
+        });
+        txtdata.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtdataKeyPressed(evt);
+            }
+        });
+
+        lblNome14.setFont(new java.awt.Font("Modern No. 20", 0, 24)); // NOI18N
+        lblNome14.setText("Data Desejada:");
+
+        txttotalvenda.setEditable(false);
+        txttotalvenda.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
+        txttotalvenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttotalvendaActionPerformed(evt);
+            }
+        });
+
+        lblNome15.setFont(new java.awt.Font("Modern No. 20", 0, 24)); // NOI18N
+        lblNome15.setText("Total da Venda:");
+
+        jLabel2.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 20)); // NOI18N
+        jLabel2.setText("Funcionário:");
+
+        txtnomeFuncionario.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
+
+        try {
+            txtCpfuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCpfuncionario.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
+        txtCpfuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfuncionarioActionPerformed(evt);
+            }
+        });
+        txtCpfuncionario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCpfuncionarioKeyPressed(evt);
+            }
+        });
+
+        lblNome16.setFont(new java.awt.Font("Modern No. 20", 0, 24)); // NOI18N
+        lblNome16.setText("CPF:");
+
+        btnbuscafuncionario.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 18)); // NOI18N
+        btnbuscafuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
+        btnbuscafuncionario.setText("Pesquisar");
+        btnbuscafuncionario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnbuscafuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscafuncionarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(lblNome16))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtCpfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnbuscafuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtnomeFuncionario))
+                .addGap(73, 73, 73)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNome14)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnpesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNome15)
+                    .addComponent(txttotalvenda, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(685, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblNome15)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNome16)
+                            .addComponent(txtCpfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnbuscafuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome14))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtnomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdata)
+                            .addComponent(btnpesquisar1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttotalvenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,6 +423,7 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,8 +432,9 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -243,7 +442,8 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
-        //
+        this.setExtendedState(this.MAXIMIZED_BOTH);
+        listar();
     }                                    
 
     private void txtdatainicioActionPerformed(java.awt.event.ActionEvent evt) {                                              
@@ -320,7 +520,72 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.dispose();
         new FrmMenuVendas().setVisible(true);
+        this.setVisible(false);
     }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void btnpesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        try {
+            Funcionarios obj1 = new Funcionarios();
+            FuncionariosDAO dao = new FuncionariosDAO();
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate data_venda = LocalDate.parse(txtdata.getText(), formato);
+            obj1 = dao.buscaFuncionarioPorCpf(txtCpfuncionario.getText());
+
+            double total_venda;
+            VendasDAO daov = new VendasDAO();
+            total_venda = daov.retornaTotalVendaPorData(obj1.getCpf(), data_venda);
+
+            txttotalvenda.setText(String.valueOf(total_venda));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao processar a data: " + e.getMessage());
+        }
+
+
+    }                                             
+
+    private void txtdataActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+    }                                       
+
+    private void txtdataKeyPressed(java.awt.event.KeyEvent evt) {                                   
+        // TODO add your handling code here:
+    }                                  
+
+    private void txttotalvendaActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void txtCpfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
+
+    private void txtCpfuncionarioKeyPressed(java.awt.event.KeyEvent evt) {                                            
+        //busca cliente por cpf
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+
+            FuncionariosDAO dao = new FuncionariosDAO();
+
+            obj1 = dao.buscaFuncionarioPorCpf(txtCpfuncionario.getText());
+
+            txtnomeFuncionario.setText(obj1.getNome());
+
+        }
+    }                                           
+
+    private void btnbuscafuncionarioActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        Funcionarios obj = new Funcionarios();
+        FuncionariosDAO dao = new FuncionariosDAO();
+
+        obj = dao.buscaFuncionarioPorCpf(txtCpfuncionario.getText());
+
+        txtnomeFuncionario.setText(obj.getNome());
+    }                                                   
 
     /**
      * @param args the command line arguments
@@ -359,17 +624,30 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JButton btnbuscafuncionario;
     private javax.swing.JButton btnpesquisar;
+    private javax.swing.JButton btnpesquisar1;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNome12;
     private javax.swing.JLabel lblNome13;
+    private javax.swing.JLabel lblNome14;
+    private javax.swing.JLabel lblNome15;
+    private javax.swing.JLabel lblNome16;
     private javax.swing.JTable tabelaHistorico;
+    private javax.swing.JFormattedTextField txtCpfuncionario;
+    private javax.swing.JFormattedTextField txtdata;
     private javax.swing.JFormattedTextField txtdatafim;
     private javax.swing.JFormattedTextField txtdatainicio;
+    private javax.swing.JTextField txtnomeFuncionario;
+    public javax.swing.JTextField txttotalvenda;
     // End of variables declaration                   
 }
