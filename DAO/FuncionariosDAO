@@ -313,21 +313,20 @@ public class FuncionariosDAO {
             if (rs.next()) {
                 //usuario logou
                 if (rs.getString("nivel_acesso").equals("Administrador")) {
-                    JOptionPane.showMessageDialog(null, "Seja bem vindo ao Sistema Stock Ease !!");
+                    JOptionPane.showMessageDialog(null, "Seja bem vindo ao Sistema Funcionário!!");
                     FrmMenuPrincipal tela = new FrmMenuPrincipal();
                     tela.usuariologado = rs.getString("nome");
                     tela.setVisible(true);
                     tela1.dispose();
                 } else if (rs.getString("nivel_acesso").equals("Usuário")) {
-                    JOptionPane.showMessageDialog(null, "Seja bem vindo ao Sistema Stock Ease !!");
+                    JOptionPane.showMessageDialog(null, "Seja bem vindo ao Sistema Administrador!!");
                     FrmMenuPrincipal tela = new FrmMenuPrincipal();
                     tela.usuariologado = rs.getString("nome");
 
                     //desabilitanto os menus
-                    tela.detalhe_vendas.setEnabled(false);
                     tela.historico_vendas.setEnabled(false);
                     tela.Controle_estoque.setEnabled(false);
-                    
+
                     tela.setVisible(true);
 
                 }
@@ -409,4 +408,43 @@ public class FuncionariosDAO {
         }
 
     }
+
+    public Funcionarios FuncionarioPorCpf(String cpf) {
+        try {
+            String sql = "SELECT * FROM tb_funcionarios WHERE cpf = ?";
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, cpf);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Funcionarios obj = new Funcionarios();
+                obj.setId(rs.getInt("Id"));
+                obj.setNome(rs.getString("Nome"));
+                obj.setRg(rs.getString("Rg"));
+                obj.setCpf(rs.getString("Cpf"));
+                obj.setEmail(rs.getString("Email"));
+                obj.setSenha(rs.getString("Senha"));
+                obj.setCargo(rs.getString("Cargo"));
+                obj.setNivel_acesso(rs.getString("Nivel_Acesso"));
+                obj.setTelefone(rs.getString("Telefone"));
+                obj.setCelular(rs.getString("Celular"));
+                obj.setCep(rs.getString("Cep"));
+                obj.setEndereco(rs.getString("Endereco"));
+                obj.setNumero(rs.getInt("Numero"));
+                obj.setComplemto(rs.getString("Complemento"));
+                obj.setBairro(rs.getString("Bairro"));
+                obj.setCidade(rs.getString("Cidade"));
+                obj.setUf(rs.getString("estado"));
+
+                return obj; // Retorna o objeto Funcionarios
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Erro na verificação do CPF: " + erro.getMessage());
+        }
+
+        return null; // Retorna null caso o CPF não seja encontrado ou ocorra um erro.
+    }
+
 }
