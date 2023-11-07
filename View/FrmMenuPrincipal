@@ -42,9 +42,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         historico_vendas = new javax.swing.JMenuItem();
-        detalhe_vendas = new javax.swing.JMenuItem();
         Controle_estoque = new javax.swing.JMenuItem();
-        vendas_dia = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -323,15 +321,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(historico_vendas);
 
-        detalhe_vendas.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        detalhe_vendas.setText("Detalhe de Vendas");
-        detalhe_vendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detalhe_vendasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(detalhe_vendas);
-
         Controle_estoque.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         Controle_estoque.setText("Controle de Estoque");
         Controle_estoque.addActionListener(new java.awt.event.ActionListener() {
@@ -340,15 +329,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu4.add(Controle_estoque);
-
-        vendas_dia.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        vendas_dia.setText("Vendas do Dia");
-        vendas_dia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vendas_diaActionPerformed(evt);
-            }
-        });
-        jMenu4.add(vendas_dia);
 
         jMenuBar1.add(jMenu4);
 
@@ -432,41 +412,39 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         txtusuario.setText(usuariologado);
         this.setVisible(true);
     }                                    
-    //final FrmMenuPrincipal tela = this;
+   
     private void btnprodutoActionPerformed(java.awt.event.ActionEvent evt) {                                           
-       this.dispose();
+       
         new FrmMenuProdutos().setVisible(true);
-        //tela.dispose();
+       
+        
     }                                          
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {                                               
-       this.dispose();
+       
         new FrmMenuFuncionario().setVisible(true);
-        //tela.dispose();
+        setVisible(false);
     }                                              
 
     private void btnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {                                              
-       this.dispose();
+       
         new FrmMenuFornecedores().setVisible(true);
-        //tela.dispose();
+        setVisible(false);
     }                                             
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       this.dispose();
+       
         new FrmMenuClientes().setVisible(true);
-        //tela.dispose();
+       setVisible(false);
     }                                           
 
     private void btnvendaActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       this.dispose();
+     
+        
         new FrmMenuVendas().setVisible(true);
-        //tela.dispose();
+        
+       
     }                                        
-
-    private void detalhe_vendasActionPerformed(java.awt.event.ActionEvent evt) {                                               
-       this.dispose();
-       new DetalheVenda().setVisible(true);
-    }                                              
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {                                    
         int op;
@@ -505,7 +483,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }                                          
 
     private void btnconfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-       this.dispose();
+      
         new FrmMenuConfiguracoes().setVisible(true);
     }                                                
 
@@ -515,21 +493,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }                                                
 
     private void historico_vendasActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-      this.dispose();
+     
        new FrmHistoricoVendas().setVisible(true);
     }                                                
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-       this.dispose();
-       this.dispose();
+
        new FrmVendas().setVisible(true);
        
-    }                                          
-
-    private void vendas_diaActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        TotalDataPorVenda tela = new TotalDataPorVenda();
-        tela.setVisible(true);
-        this.setVisible(false);
     }                                          
 
     /**
@@ -576,7 +547,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnconfiguracoes;
     private javax.swing.JButton btnproduto;
     private javax.swing.JButton btnvenda;
-    public javax.swing.JMenuItem detalhe_vendas;
     public javax.swing.JMenuItem historico_vendas;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -603,6 +573,5 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txtusuario;
-    public javax.swing.JMenuItem vendas_dia;
     // End of variables declaration                   
 }
