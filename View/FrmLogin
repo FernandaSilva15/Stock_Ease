@@ -35,7 +35,7 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(243, 241, 253));
+        jPanel1.setBackground(new java.awt.Color(245, 239, 255));
         jPanel1.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 18)); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Captura_de_tela_2023-11-09_201131-removebg-preview.png"))); // NOI18N
@@ -209,6 +209,9 @@ public class FrmLogin extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Algo deu errado !" + e);
+            this.dispose();
+                new FrmLogin().setVisible(true);
+            
         }
     }                                      
 
