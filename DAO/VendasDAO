@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author karol
- */
 public class VendasDAO {
 
     private Connection con;
