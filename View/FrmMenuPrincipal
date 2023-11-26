@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
-    public String usuariologado;
+   //public String usuariologado;
 
     public FrmMenuPrincipal() {
         initComponents();
@@ -16,16 +16,15 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnvenda = new javax.swing.JButton();
-        btnproduto = new javax.swing.JButton();
-        btnFornecedor = new javax.swing.JButton();
-        btnconfiguracoes = new javax.swing.JButton();
-        btnClientes = new javax.swing.JButton();
-        btnFuncionario = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txtusuario = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        btnClientes = new javax.swing.JButton();
+        btnFuncionario = new javax.swing.JButton();
+        btnFornecedor = new javax.swing.JButton();
+        btnproduto = new javax.swing.JButton();
+        btnvenda = new javax.swing.JButton();
+        btnconfiguracoes = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -45,7 +44,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         Controle_estoque = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
 
@@ -60,49 +58,34 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(188, 152, 239));
 
-        btnvenda.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        btnvenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/vendas (1).png"))); // NOI18N
-        btnvenda.setText("Vendas          ");
-        btnvenda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnvenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnvendaActionPerformed(evt);
-            }
-        });
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo stock ease sem fundo e atualizada.png"))); // NOI18N
 
-        btnproduto.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        btnproduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/produtos (1).png"))); // NOI18N
-        btnproduto.setText("Produtos      ");
-        btnproduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnproduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnprodutoActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnFornecedor.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/fornecedores.png"))); // NOI18N
-        btnFornecedor.setText("Fornecedores");
-        btnFornecedor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFornecedorActionPerformed(evt);
-            }
-        });
+        jLabel3.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(144, 9, 235));
+        jLabel3.setText("Seja Bem Vindo ao Stock Ease");
 
-        btnconfiguracoes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        btnconfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/configuracoes (1).png"))); // NOI18N
-        btnconfiguracoes.setText("Configurações");
-        btnconfiguracoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnconfiguracoes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnconfiguracoesActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel3)
+                .addContainerGap(1810, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel3)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
 
-        btnClientes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        btnClientes.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/clientes (1).png"))); // NOI18N
-        btnClientes.setText("Clientes       ");
+        btnClientes.setText("   CLIENTES       ");
         btnClientes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,9 +93,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnFuncionario.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        btnFuncionario.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/funcionarios (1).png"))); // NOI18N
-        btnFuncionario.setText("Funcionários");
+        btnFuncionario.setText(" FUNCIONÁRIOS");
         btnFuncionario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,53 +103,63 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo stock ease sem fundo e atualizada.png"))); // NOI18N
+        btnFornecedor.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
+        btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/fornecedores.png"))); // NOI18N
+        btnFornecedor.setText(" FORNECEDORES");
+        btnFornecedor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFornecedorActionPerformed(evt);
+            }
+        });
 
-        txtusuario.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        txtusuario.setForeground(new java.awt.Color(153, 0, 255));
-        txtusuario.setText("Pietra Cruz");
+        btnproduto.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
+        btnproduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/produtos (1).png"))); // NOI18N
+        btnproduto.setText("  PRODUTOS      ");
+        btnproduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnproduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprodutoActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        jLabel3.setText("Conectado com:");
+        btnvenda.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
+        btnvenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/vendas (1).png"))); // NOI18N
+        btnvenda.setText("    VENDAS         ");
+        btnvenda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnvenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvendaActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel3)
-                .addGap(27, 27, 27)
-                .addComponent(txtusuario)
-                .addContainerGap(1673, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtusuario))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        btnconfiguracoes.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 24)); // NOI18N
+        btnconfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/configuracoes (1).png"))); // NOI18N
+        btnconfiguracoes.setText("CONFIGURAÇÕES");
+        btnconfiguracoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnconfiguracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnconfiguracoesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnvenda)
+                    .addComponent(btnconfiguracoes)
                     .addComponent(btnproduto)
                     .addComponent(btnFornecedor)
                     .addComponent(btnFuncionario)
-                    .addComponent(btnconfiguracoes)
-                    .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(245, 245, 245)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(212, 212, 212)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -178,19 +171,19 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(69, 69, 69)
                         .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addGap(41, 41, 41)
                         .addComponent(btnFuncionario)
-                        .addGap(35, 35, 35)
+                        .addGap(29, 29, 29)
                         .addComponent(btnFornecedor)
-                        .addGap(35, 35, 35)
+                        .addGap(33, 33, 33)
                         .addComponent(btnproduto)
-                        .addGap(35, 35, 35)
+                        .addGap(27, 27, 27)
                         .addComponent(btnvenda)
-                        .addGap(35, 35, 35)
+                        .addGap(31, 31, 31)
                         .addComponent(btnconfiguracoes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,7 +196,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu1.setText("  Clientes  ");
         jMenu1.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem1.setText("Cadastrar Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +207,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem2.setText("Consultar Clientes");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +223,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu2.setText(" Funcionários  ");
         jMenu2.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem3.setText("Cadastrar Funcionários");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +233,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem3);
 
-        jMenuItem4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem4.setText("Consultar Funcionários");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +248,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu3.setText(" Fornecedores  ");
         jMenu3.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem5.setText("Cadastrar Fornecedores");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +258,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
-        jMenuItem6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem6.setText("Consultar Fornecedores");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -278,7 +273,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu7.setText("  Produtos  ");
         jMenu7.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem9.setText("Cadastro de Produtos");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +283,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem9);
 
-        jMenuItem8.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem8.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem8.setText("Consulta de Produtos");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +298,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu4.setText(" Vendas ");
         jMenu4.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/2727253 (1).png"))); // NOI18N
         jMenuItem7.setText("Abrir PDV");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,7 +308,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem7);
 
-        historico_vendas.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        historico_vendas.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        historico_vendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/411781 (1).png"))); // NOI18N
         historico_vendas.setText("Histórico de Vendas");
         historico_vendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,7 +318,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(historico_vendas);
 
-        Controle_estoque.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        Controle_estoque.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        Controle_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/estoque (1) (2).png"))); // NOI18N
         Controle_estoque.setText("Controle de Estoque");
         Controle_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +333,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu5.setText("  Configurações  ");
         jMenu5.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
-        jMenuItem10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/troca (1).png"))); // NOI18N
         jMenuItem10.setText("Trocar de Usuário");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -344,12 +343,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem10);
 
-        jMenuItem12.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        jMenuItem12.setText("Manual do usuário");
-        jMenu5.add(jMenuItem12);
-
-        jMenuItem13.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jMenuItem13.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
+        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sobre (1).png"))); // NOI18N
         jMenuItem13.setText("Sobre o Sistema");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem13);
 
         jMenuBar1.add(jMenu5);
@@ -385,18 +386,21 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmClientes tela = new FrmClientes();
         tela.setVisible(true);
+        this.dispose();
     }                                          
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmClientes tela = new FrmClientes();
         tela.jTabbedPane1.setSelectedIndex(1);
         tela.setVisible(true);
+          this.dispose();
     }                                          
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmFuncionarios tela = new FrmFuncionarios();
         tela.jTabbedPane1.setSelectedIndex(1);
         tela.setVisible(true);
+          this.dispose();
     }                                          
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -409,14 +413,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
         // maximizar o frame
         this.setExtendedState(this.MAXIMIZED_BOTH);
-        txtusuario.setText(usuariologado);
+      // txtusuario.setText(usuariologado);
         this.setVisible(true);
     }                                    
    
     private void btnprodutoActionPerformed(java.awt.event.ActionEvent evt) {                                           
        
         new FrmMenuProdutos().setVisible(true);
-       
+        setVisible(false);
         
     }                                          
 
@@ -442,7 +446,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
      
         
         new FrmMenuVendas().setVisible(true);
-        
+         setVisible(false);
        
     }                                        
 
@@ -464,44 +468,56 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmFuncionarios tela = new FrmFuncionarios();
         tela.setVisible(true);
+        this.dispose();
     }                                          
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmFornecedores tela = new FrmFornecedores();
         tela.setVisible(true);
+        this.dispose();
     }                                          
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmFornecedores tela = new FrmFornecedores();
         tela.jTabbedPane1.setSelectedIndex(1);
         tela.setVisible(true);
+        this.dispose();
     }                                          
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         FrmProdutos tela = new FrmProdutos();
         tela.setVisible(true);
+        this.dispose();
     }                                          
 
     private void btnconfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {                                                 
       
         new FrmMenuConfiguracoes().setVisible(true);
+        setVisible(false);
     }                                                
 
     private void Controle_estoqueActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         ControleEstoque tela = new ControleEstoque();
         tela.setVisible(true);
+         this.dispose();
     }                                                
 
     private void historico_vendasActionPerformed(java.awt.event.ActionEvent evt) {                                                 
      
        new FrmHistoricoVendas().setVisible(true);
+       this.dispose();
     }                                                
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
 
        new FrmVendas().setVisible(true);
-       
+       this.dispose();
     }                                          
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        this.dispose();
+        new FrmSobreSistema().setVisible(true);
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -546,7 +562,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnconfiguracoes;
     private javax.swing.JButton btnproduto;
-    private javax.swing.JButton btnvenda;
+    public javax.swing.JButton btnvenda;
     public javax.swing.JMenuItem historico_vendas;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -560,7 +576,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
@@ -572,6 +587,5 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel txtusuario;
     // End of variables declaration                   
 }
