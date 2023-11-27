@@ -196,6 +196,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu1.setText("  Clientes  ");
         jMenu1.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
@@ -207,6 +208,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
@@ -223,6 +225,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu2.setText(" Funcionários  ");
         jMenu2.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem3.setText("Cadastrar Funcionários");
@@ -233,6 +236,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem3);
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem4.setText("Consultar Funcionários");
@@ -248,6 +252,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu3.setText(" Fornecedores  ");
         jMenu3.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem5.setText("Cadastrar Fornecedores");
@@ -258,6 +263,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem6.setText("Consultar Fornecedores");
@@ -273,6 +279,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu7.setText("  Produtos  ");
         jMenu7.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem9.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/postagem-no-instagram (1).png"))); // NOI18N
         jMenuItem9.setText("Cadastro de Produtos");
@@ -283,6 +290,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem9);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem8.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
         jMenuItem8.setText("Consulta de Produtos");
@@ -298,6 +306,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu4.setText(" Vendas ");
         jMenu4.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/2727253 (1).png"))); // NOI18N
         jMenuItem7.setText("Abrir PDV");
@@ -308,6 +317,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem7);
 
+        historico_vendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
         historico_vendas.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         historico_vendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/411781 (1).png"))); // NOI18N
         historico_vendas.setText("Histórico de Vendas");
@@ -318,6 +328,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(historico_vendas);
 
+        Controle_estoque.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         Controle_estoque.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         Controle_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/estoque (1) (2).png"))); // NOI18N
         Controle_estoque.setText("Controle de Estoque");
@@ -333,6 +344,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu5.setText("  Configurações  ");
         jMenu5.setFont(new java.awt.Font("Rockwell", 0, 36)); // NOI18N
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 24)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/troca (1).png"))); // NOI18N
         jMenuItem10.setText("Trocar de Usuário");
@@ -405,9 +417,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         //efetua troca de usuario
+      
         FrmLogin login = new FrmLogin();
         this.dispose();
-        login.setVisible(true);
+        login.setVisible(true);       
     }                                           
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
