@@ -5,6 +5,10 @@
  */
 package br.com.projeto.view;
 
+/**
+ *
+ * @author karol
+ */
 public class FrmMenuFornecedores extends javax.swing.JFrame {
 
     /**
@@ -33,7 +37,8 @@ public class FrmMenuFornecedores extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu de Fornecedores");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -190,6 +195,7 @@ public class FrmMenuFornecedores extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
        
     }                                        
 
@@ -241,4 +247,5 @@ public class FrmMenuFornecedores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-  
+    // End of variables declaration                   
+}
