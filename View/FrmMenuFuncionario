@@ -5,6 +5,10 @@
  */
 package br.com.projeto.view;
 
+/**
+ *
+ * @author karol
+ */
 public class FrmMenuFuncionario extends javax.swing.JFrame {
 
     /**
@@ -28,12 +32,13 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        btnpdv = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btncadastro = new javax.swing.JButton();
+        btnconsulta = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu de Funcionarios");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -75,23 +80,23 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(229, 210, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 255), new java.awt.Color(204, 153, 255), new java.awt.Color(204, 153, 255), new java.awt.Color(204, 153, 255)));
 
-        btnpdv.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        btnpdv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novo.png"))); // NOI18N
-        btnpdv.setText(" CADASTRO");
-        btnpdv.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnpdv.addActionListener(new java.awt.event.ActionListener() {
+        btncadastro.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        btncadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novo.png"))); // NOI18N
+        btncadastro.setText(" CADASTRO");
+        btncadastro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btncadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnpdvActionPerformed(evt);
+                btncadastroActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
-        jButton7.setText(" CONSULTA");
-        jButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnconsulta.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        btnconsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/64673 (1).png"))); // NOI18N
+        btnconsulta.setText(" CONSULTA");
+        btnconsulta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnconsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnconsultaActionPerformed(evt);
             }
         });
 
@@ -114,8 +119,8 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnpdv, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btncadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -125,9 +130,9 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addComponent(btnpdv, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btncadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -172,24 +177,26 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnconsultaActionPerformed(java.awt.event.ActionEvent evt) {                                            
         FrmFuncionarios tela = new FrmFuncionarios();
         tela.jTabbedPane1.setSelectedIndex(1);
         tela.setVisible(true);
-    }                                        
+        this.dispose();
+    }                                           
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
         //maximizar frame
         this.setExtendedState(this.MAXIMIZED_BOTH);
     }                                    
 
-    private void btnpdvActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void btncadastroActionPerformed(java.awt.event.ActionEvent evt) {                                            
        this.dispose();
         new FrmFuncionarios().setVisible(true);
-    }                                      
+    }                                           
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.dispose();
+        new FrmMenuPrincipal().setVisible(true);
        
     }                                        
 
@@ -230,13 +237,14 @@ public class FrmMenuFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton btnpdv;
+    private javax.swing.JButton btncadastro;
+    private javax.swing.JButton btnconsulta;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;                  
+    private javax.swing.JPanel jPanel3;
+    // End of variables declaration                   
 }
