@@ -6,7 +6,33 @@ import br.com.projeto.view.SplashScreen;
 public class ExecutaSplashScreen {
 
     public static void main(String[] args) {
-        int duracaoSplash = 5000; // Duração em milissegundos (5 segundos)
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        int duracaoSplash = 3000; // Duração em milissegundos (5 segundos)
 
         // Crie uma instância da tela de splash
         SplashScreen splash = new SplashScreen(duracaoSplash);
@@ -21,10 +47,8 @@ public class ExecutaSplashScreen {
         }
 
         // Após a conclusão das tarefas longas, você pode fechar a tela de splash
-        splash.dispose();
         new FrmLogin().setVisible(true);
+        splash.dispose();
 
-        // Continue com a lógica principal do aplicativo
-        // Aqui você pode criar e exibir sua janela principal, por exemplo.
     }
 }
