@@ -1,4 +1,3 @@
-
 package br.com.projeto.model;
 
 /**
@@ -6,10 +5,21 @@ package br.com.projeto.model;
  * @author karol
  */
 public class vendas {
-    
+
     private int id;
     private Clientes cliente;
+    private Funcionarios funcionario;
+    private Double total_venda;
+    private String obs;
     private String data_venda;
+
+    public Funcionarios getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionarios funcionario) {
+        this.funcionario = funcionario;
+    }
 
     public int getId() {
         return id;
@@ -50,9 +60,5 @@ public class vendas {
     public void setObs(String obs) {
         this.obs = obs;
     }
-    private Double total_venda;
-    private String obs;
-    
-    
-}
 
+}
