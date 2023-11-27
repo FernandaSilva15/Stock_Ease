@@ -8,11 +8,11 @@ public class ConnectionFactory {
     
     public Connection connection = null;
     
-	private final String DRIVER = "com.mysql.jdbc.Driver";
-	private final String DBNAME = "bdstock";
+	private final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private final String DBNAME = "StockEase";
 	private final String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
-	private final String LOGIN = "usuarioStockease";
-	private final String SENHA = "12345";
+	private final String LOGIN = "StockEase10";
+	private final String SENHA = "00000";
         
         /**
 	 * * metodo que faz conexao com o banco de dados retorna true se houve *
