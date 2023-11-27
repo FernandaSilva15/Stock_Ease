@@ -507,10 +507,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
       
         new FrmMenuConfiguracoes().setVisible(true);
         setVisible(false);
+        
     }                                                
 
     private void Controle_estoqueActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        ControleEstoque tela = new ControleEstoque();
+        FrmControleEstoque tela = new FrmControleEstoque();
         tela.setVisible(true);
          this.dispose();
     }                                                
@@ -528,8 +529,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }                                          
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        this.dispose();
+        
         new FrmSobreSistema().setVisible(true);
+        this.dispose();
     }                                           
 
     /**
