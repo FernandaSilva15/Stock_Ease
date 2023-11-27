@@ -1,4 +1,3 @@
-
 package br.com.projeto.dao;
 
 import br.com.projeto.jdbc.ConnectionFactory;
@@ -25,7 +24,7 @@ public class ClientesDAO {
     }
 
     // metodos cadastrar clientes
-    public void cadastrarCliete(Clientes obj) {
+    public void cadastrarCliente(Clientes obj) {
         try {
             // primeiro passo criar o comando mysql
             String sql = "insert into tb_clientes (nome,rg,cpf,email,telefone,celular,cep,endereco,numero,complemento,bairro,cidade,estado)"
@@ -61,7 +60,7 @@ public class ClientesDAO {
     }
 
     // metodos alterar clientes
-    public void alterarCliete(Clientes obj) {
+    public void alterarCliente(Clientes obj) {
 
         try {
             // primeiro passo criar o comando mysql
@@ -99,7 +98,7 @@ public class ClientesDAO {
     }
 
     // metodos excluir clientes
-    public void excluirCliete(Clientes obj) {
+    public void excluirCliente(Clientes obj) {
 
         try {
             // primeiro passo criar o comando mysql
@@ -120,9 +119,9 @@ public class ClientesDAO {
         }
 
     }
-
+    
     // metodo listar todos os clientes
-    public List<Clientes> listarClientes() {
+    public List<Clientes> listarClientes(){
 
         try {
 
@@ -202,6 +201,43 @@ public class ClientesDAO {
             return null;
         }
     }
+    //busca ´por cpf
+     public Clientes consultaClientePorCpf(String cpf) {
+        try {
+            String sql = "select * from tb_clientes where cpf = ?"; //buscar todos os clientes onde o nome corresponde ao parametro
+
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, cpf);
+
+            ResultSet rs = stmt.executeQuery();// sempre criar esse objeto e ele reccebe essa execução (sql)
+            Clientes obj = new Clientes();
+            if (rs.next()) {
+
+                obj.setId(rs.getInt("Id"));
+                obj.setNome(rs.getString("Nome"));
+                obj.setRg(rs.getString("Rg"));
+                obj.setCpf(rs.getString("Cpf"));
+                obj.setEmail(rs.getString("Email"));
+                obj.setTelefone(rs.getString("Telefone"));
+                obj.setCelular(rs.getString("Celular"));
+                obj.setCep(rs.getString("Cep"));
+                obj.setEndereco(rs.getString("Endereco"));
+                obj.setNumero(rs.getInt("Numero"));
+                obj.setComplemto(rs.getString("Complemento"));
+                obj.setBairro(rs.getString("Bairro"));
+                obj.setCidade(rs.getString("Cidade"));
+                obj.setUf(rs.getString("estado"));
+
+            }
+
+            return obj;
+
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado !! ");
+            return null;
+        }
+    }
+    
 //metodo de busca por cliente (nome) dos depois implementar a busca com diversos tipos como cpf, numero de celular
     //muda apenas o´parametro "public List<Clientes> BuscaClientesPorNome(String nome)" pelo desejado e o 
     //parametro mysql
@@ -287,42 +323,6 @@ public class ClientesDAO {
         }
     }
 
-    //busca clientes por Cpf
-    public Clientes consultaClientePorCpf(String Cpf) {
-        try {
-            String sql = "select * from tb_clientes where cpf = ?"; //buscar todos os clientes onde o nome corresponde ao parametro
-
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(3, Cpf);
-
-            ResultSet rs = stmt.executeQuery();// sempre criar esse objeto e ele reccebe essa execução (sql)
-            Clientes obj = new Clientes();
-            if (rs.next()) {
-
-                obj.setId(rs.getInt("Id"));
-                obj.setNome(rs.getString("Nome"));
-                obj.setRg(rs.getString("Rg"));
-                obj.setCpf(rs.getString("Cpf"));
-                obj.setEmail(rs.getString("Email"));
-                obj.setTelefone(rs.getString("Telefone"));
-                obj.setCelular(rs.getString("Celular"));
-                obj.setCep(rs.getString("Cep"));
-                obj.setEndereco(rs.getString("Endereco"));
-                obj.setNumero(rs.getInt("Numero"));
-                obj.setComplemto(rs.getString("Complemento"));
-                obj.setBairro(rs.getString("Bairro"));
-                obj.setCidade(rs.getString("Cidade"));
-                obj.setUf(rs.getString("estado"));
-
-            }
-
-            return obj;
-
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Cliente não encontrado !! ");
-            return null;
-        }
-    }
 
     //busca por cep 
     public Clientes buscaCep(String cep) {
