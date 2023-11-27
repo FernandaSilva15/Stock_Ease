@@ -100,7 +100,7 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel4)
-                .addGap(488, 488, 488)
+                .addGap(479, 479, 479)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -393,8 +393,8 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
                             .addGap(42, 42, 42)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(txtCpfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtCpfuncionario)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(btnbuscafuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtnomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel4Layout.createSequentialGroup()
@@ -516,7 +516,7 @@ public class FrmHistoricoVendas extends javax.swing.JFrame {
 
     private void tabelaHistoricoMouseClicked(java.awt.event.MouseEvent evt) {                                             
         //clicar em uma venda
-        DetalheVenda tela = new DetalheVenda();
+        FrmDetalheVenda tela = new FrmDetalheVenda();
         tela.txtfuncionario.setText(tabelaHistorico.getValueAt(tabelaHistorico.getSelectedRow(), 3).toString());
         tela.txtclientes.setText(tabelaHistorico.getValueAt(tabelaHistorico.getSelectedRow(), 2).toString());
         tela.txttotalvenda.setText(tabelaHistorico.getValueAt(tabelaHistorico.getSelectedRow(), 4).toString());
