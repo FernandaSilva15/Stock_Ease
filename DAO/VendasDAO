@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author karol
+ */
 public class VendasDAO {
 
     private Connection con;
@@ -44,7 +48,7 @@ public class VendasDAO {
             stmt.close();
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "erro: " + erro);
+            JOptionPane.showMessageDialog(null, "ERRO IRMÃO!"+erro);
         }
 
     }
