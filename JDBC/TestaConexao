@@ -14,9 +14,9 @@ public class TestaConexao {
         Connection connection = null;
         try {
             // Configurar a URL de conexão com o banco de dados
-            String url = "jdbc:mysql://127.0.0.1/bdstock";
-            String usuario = "usuarioStockease";
-            String senha = "12345";
+            String url = "jdbc:mysql://127.0.0.1/StockEase";
+            String usuario = "StockEase10";
+            String senha = "00000";
 
             // Obtém uma conexão usando DriverManager
             connection = DriverManager.getConnection(url, usuario, senha);
