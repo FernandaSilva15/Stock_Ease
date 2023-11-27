@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import br.com.projeto.model.Funcionarios;
+import br.com.projeto.model.Utilitarios;
 import javax.swing.JOptionPane;
 
 public class FrmVendas extends javax.swing.JFrame {
@@ -74,7 +75,7 @@ public class FrmVendas extends javax.swing.JFrame {
         txtCpfuncionario = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Vendas\n");
+        setTitle("Ponto de Vendas ");
         setBackground(new java.awt.Color(232, 232, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -181,15 +182,15 @@ public class FrmVendas extends javax.swing.JFrame {
                         .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnbuscaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         dadosclienteLayout.setVerticalGroup(
             dadosclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosclienteLayout.createSequentialGroup()
+            .addGroup(dadosclienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblNome12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -330,7 +331,7 @@ public class FrmVendas extends javax.swing.JFrame {
         dadoscarrinho.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 255)), "Carrinho de Compras", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 18))); // NOI18N
 
         TabelaItens.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 102, 255), 1, true));
-        TabelaItens.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        TabelaItens.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
         TabelaItens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -348,7 +349,8 @@ public class FrmVendas extends javax.swing.JFrame {
             }
         });
         TabelaItens.setColumnSelectionAllowed(true);
-        TabelaItens.setSelectionBackground(new java.awt.Color(245, 245, 254));
+        TabelaItens.setGridColor(new java.awt.Color(204, 204, 204));
+        TabelaItens.setSelectionBackground(new java.awt.Color(204, 153, 255));
         TabelaItens.setSelectionForeground(new java.awt.Color(0, 0, 0));
         TabelaItens.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TabelaItens);
@@ -589,8 +591,8 @@ public class FrmVendas extends javax.swing.JFrame {
                             .addGroup(dadosfuncinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblNome15)
                                 .addGroup(dadosfuncinarioLayout.createSequentialGroup()
-                                    .addComponent(txtCpfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtCpfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnbuscafuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(45, 45, 45)
                         .addGroup(dadosfuncinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -857,30 +859,25 @@ public class FrmVendas extends javax.swing.JFrame {
     }
     private void btncancelar1MouseClicked(java.awt.event.MouseEvent evt) {                                          
         String chaveAcesso = JOptionPane.showInputDialog(null, "Digite o código de acesso:");
-
         String chaveAdmin = "0000";
 
         if (chaveAcesso != null && chaveAcesso.equals(chaveAdmin)) {
-            DefaultTableModel model = (DefaultTableModel) TabelaItens.getModel();
-            int selectedRow = TabelaItens.getSelectedRow();
-
-            if (selectedRow != -1) {
-
-                double subtotal = (double) model.getValueAt(selectedRow, 4);
-
-                // Remove a linha selecionada do modelo da tabela
-                model.removeRow(selectedRow);
-
-                double total = obterValorTotalCompra();
-
-                // Atualize o valor total da compra na interface do usuário (onde quer que seja exibido)
-                atualizarValorTotalCompra(total);
-            } else {
-                JOptionPane.showMessageDialog(null, "Selecione um item para remover do carrinho.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Chave de acesso incorreta. Remoção não autorizada.");
+              DefaultTableModel model = (DefaultTableModel) TabelaItens.getModel();
+		int selectedRow = TabelaItens.getSelectedRow();
+		if (selectedRow == -1) {
+			JOptionPane.showMessageDialog(this, "Nenhuma linha foi selecionada!! Selecione uma linha para excluir.", "Erro", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+		double valorSubtraido = (double) model.getValueAt(selectedRow, 4);
+		int choice = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja excluir este item ?", "Confirmação",
+				JOptionPane.YES_NO_OPTION);
+		if (choice == JOptionPane.YES_OPTION) {
+			model.removeRow(selectedRow);
+			total -= valorSubtraido;
+			txttotal.setText(String.valueOf(total));
+		}
         }
+
 
 
     }                                         
